@@ -14,7 +14,6 @@
 		A8EDD4A01CD1A83E00B171FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD49E1CD1A83E00B171FE /* LaunchScreen.storyboard */; };
 		A8EDD4D31CD1A8CA00B171FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C31CD1A8CA00B171FE /* Constants.swift */; };
 		A8EDD4D41CD1A8CA00B171FE /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */; };
-		A8EDD4D51CD1A8CA00B171FE /* CreateNewPromise.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4C51CD1A8CA00B171FE /* CreateNewPromise.xib */; };
 		A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift */; };
 		A8EDD4D71CD1A8CA00B171FE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C71CD1A8CA00B171FE /* Enums.swift */; };
 		A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */; };
@@ -76,7 +75,6 @@
 		A8EDD4B11CD1A83E00B171FE /* ShrineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShrineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EDD4C31CD1A8CA00B171FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
-		A8EDD4C51CD1A8CA00B171FE /* CreateNewPromise.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateNewPromise.xib; sourceTree = "<group>"; };
 		A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPromiseViewController.swift; sourceTree = "<group>"; };
 		A8EDD4C71CD1A8CA00B171FE /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSBrain.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 		A8EDD4E81CD1A95A00B171FE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A8EDD4C51CD1A8CA00B171FE /* CreateNewPromise.xib */,
 				A8EDD49E1CD1A83E00B171FE /* LaunchScreen.storyboard */,
 				A8EDD4991CD1A83E00B171FE /* Main.storyboard */,
 			);
@@ -403,7 +400,6 @@
 				A8EDD4E41CD1A8E900B171FE /* Podfile in Resources */,
 				A8EDD4A01CD1A83E00B171FE /* LaunchScreen.storyboard in Resources */,
 				A8EDD49D1CD1A83E00B171FE /* Assets.xcassets in Resources */,
-				A8EDD4D51CD1A8CA00B171FE /* CreateNewPromise.xib in Resources */,
 				A8EDD4D91CD1A8CA00B171FE /* Info.plist in Resources */,
 				A8EDD49B1CD1A83E00B171FE /* Main.storyboard in Resources */,
 			);

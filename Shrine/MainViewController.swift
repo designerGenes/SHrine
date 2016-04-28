@@ -22,7 +22,9 @@ class MainViewController: BetterViewController {
 
   // MARK: -- variables
   var createNewPromiseView: CreateNewPromiseViewController?
-  var mapObject: MKMapView? { didSet { loadMapViewIntoContainer()} }
+  var  mapView: MKMapView?
+  
+  var mapObject: MKMapView? { didSet { loadMapViewIntoContainer()} }  // need this?
 
   // MARK: -- custom functions
   
@@ -94,6 +96,17 @@ class MainViewController: BetterViewController {
     super.viewDidAppear(animated)
     didAppearStuff()
     
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    SAFE(mapView) { mapView in
+      SAFE(getAppDelegate().GPS_Brain.focus) { focus in
+        if mapView == focus {
+          getAppDelegate().GPS_Brain.focus = nil  // cleanup code just for kicks
+        }
+      }
+    }
+    super.viewWillDisappear(animated)
   }
 
   override func viewWillAppear(animated: Bool) {

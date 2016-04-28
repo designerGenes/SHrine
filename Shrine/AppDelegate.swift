@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var bundle: NSBundle!
   let GENERIC_ERROR = "Oh lawd Jesus it's on fire!"
   var currentDominantVC: BetterViewController?
+  var mapView: MKMapView?
   var storyboard: UIStoryboard!
   var consequences: moralConsequenceHash!
 

@@ -51,105 +51,105 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVZ-Dr-520">
-                                <rect key="frame" x="19" y="203" width="337" height="112"/>
+                                <rect key="frame" x="19" y="250" width="337" height="334"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shrine Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-S7-Flr">
-                                        <rect key="frame" x="51" y="42" width="235" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQZ-Eb-deW">
-                                        <rect key="frame" x="51" y="64" width="235" height="30"/>
+                                        <rect key="frame" x="54" y="83" width="229" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="typedInNickname:" destination="UI2-TJ-gfQ" eventType="editingDidEnd" id="yHM-Ju-aIo"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-p2-bEa">
+                                        <rect key="frame" x="138" y="205" width="150" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="8mB-vD-Qv3"/>
+                                            <constraint firstAttribute="width" secondItem="FIt-p2-bEa" secondAttribute="height" multiplier="5:2" id="aC3-vu-hDh"/>
+                                        </constraints>
+                                        <state key="normal" image="btnGo_wide_off"/>
+                                        <state key="highlighted" image="btnGo_wide_on"/>
+                                        <connections>
+                                            <action selector="clickedGo:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="i2i-sY-kmc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-3J-YSo" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="205" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qzM-3J-YSo" secondAttribute="height" multiplier="1:1" id="3c3-kc-u6z"/>
+                                            <constraint firstAttribute="width" constant="60" id="NS6-ek-PrQ"/>
+                                        </constraints>
+                                        <state key="normal" image="customDays_off"/>
+                                        <state key="highlighted" image="customDays_on"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-7y-WhC" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                        <rect key="frame" x="138" y="137" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kq9-7y-WhC" secondAttribute="height" multiplier="1:1" id="Jv9-x4-BxF"/>
+                                            <constraint firstAttribute="width" constant="60" id="gIt-1g-Jmm"/>
+                                        </constraints>
+                                        <state key="normal" image="sevenDays_off"/>
+                                        <state key="highlighted" image="sevenDays_on"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-aj-hcs" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                        <rect key="frame" x="223" y="137" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LNR-E8-pB0"/>
+                                            <constraint firstAttribute="width" secondItem="H8F-aj-hcs" secondAttribute="height" multiplier="1:1" id="XVr-n7-tF7"/>
+                                        </constraints>
+                                        <state key="normal" image="thirtyDays_off"/>
+                                        <state key="highlighted" image="thirtyDays_on"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLV-Jh-38d" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="137" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FLV-Jh-38d" secondAttribute="height" multiplier="1:1" id="tW4-Ty-DN7"/>
+                                            <constraint firstAttribute="width" constant="60" id="y5r-Zb-ueE"/>
+                                        </constraints>
+                                        <state key="normal" image="oneDay_off"/>
+                                        <state key="highlighted" image="oneDay_on"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shrine Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-S7-Flr">
+                                        <rect key="frame" x="54" y="61" width="141" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.098039215686274508" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="width" secondItem="wQZ-Eb-deW" secondAttribute="width" id="2Xe-Pf-Tfi"/>
-                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="bottom" secondItem="tVZ-Dr-520" secondAttribute="centerY" constant="8" id="8zC-cL-8Eg"/>
-                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="Ors-5q-4sn"/>
-                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="width" secondItem="tVZ-Dr-520" secondAttribute="width" multiplier="0.7" id="TbO-II-jab"/>
-                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="centerY" constant="8" id="dUw-C7-CKZ"/>
-                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="kmU-Ju-OuG"/>
-                                    <constraint firstAttribute="width" secondItem="tVZ-Dr-520" secondAttribute="height" multiplier="3:1" id="yq5-DM-LLe"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="3bg-sl-M5G"/>
+                                    <constraint firstItem="Kq9-7y-WhC" firstAttribute="centerY" secondItem="tVZ-Dr-520" secondAttribute="centerY" id="43u-Nd-ifm"/>
+                                    <constraint firstItem="FIt-p2-bEa" firstAttribute="top" secondItem="H8F-aj-hcs" secondAttribute="bottom" constant="8" id="8By-j4-KzG"/>
+                                    <constraint firstItem="Kq9-7y-WhC" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="9Ob-Ap-JVQ"/>
+                                    <constraint firstItem="FLV-Jh-38d" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" multiplier="0.5" id="GlM-fh-td5"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="trailing" secondItem="H8F-aj-hcs" secondAttribute="trailing" id="IHi-Bx-htC"/>
+                                    <constraint firstItem="qzM-3J-YSo" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" multiplier="0.5" id="Ir6-oy-amw"/>
+                                    <constraint firstItem="FLV-Jh-38d" firstAttribute="centerY" secondItem="tVZ-Dr-520" secondAttribute="centerY" id="NVR-3z-2ca"/>
+                                    <constraint firstItem="Kq9-7y-WhC" firstAttribute="top" secondItem="wQZ-Eb-deW" secondAttribute="bottom" constant="24" id="RUj-hq-YSM"/>
+                                    <constraint firstItem="FIt-p2-bEa" firstAttribute="leading" secondItem="Kq9-7y-WhC" secondAttribute="leading" id="Ucb-7L-D3j"/>
+                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="leading" secondItem="wQZ-Eb-deW" secondAttribute="leading" id="cJT-5T-JWd"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="top" secondItem="G4j-S7-Flr" secondAttribute="bottom" id="g1k-Py-YWL"/>
+                                    <constraint firstItem="qzM-3J-YSo" firstAttribute="top" secondItem="FLV-Jh-38d" secondAttribute="bottom" constant="8" id="igc-hc-fNa"/>
+                                    <constraint firstItem="H8F-aj-hcs" firstAttribute="centerY" secondItem="tVZ-Dr-520" secondAttribute="centerY" id="kC5-4p-cdX"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="leading" secondItem="FLV-Jh-38d" secondAttribute="leading" id="wDP-ae-Amf"/>
+                                    <constraint firstItem="H8F-aj-hcs" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" multiplier="1.5" id="z7L-IL-drK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-p2-bEa">
-                                <rect key="frame" x="75" y="571" width="225" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FIt-p2-bEa" secondAttribute="height" multiplier="45:16" id="GqV-6E-8vs"/>
-                                    <constraint firstAttribute="height" constant="80" id="hyH-KJ-h89"/>
-                                </constraints>
-                                <state key="normal" image="btnGo_off"/>
-                                <state key="highlighted" image="btnGo_on"/>
-                                <connections>
-                                    <action selector="clickedGo:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="i2i-sY-kmc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLV-Jh-38d" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
-                                <rect key="frame" x="120" y="331" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FLV-Jh-38d" secondAttribute="height" multiplier="1:1" id="tW4-Ty-DN7"/>
-                                    <constraint firstAttribute="width" constant="60" id="y5r-Zb-ueE"/>
-                                </constraints>
-                                <state key="normal" image="oneDay_off"/>
-                                <state key="highlighted" image="oneDay_on"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-aj-hcs" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
-                                <rect key="frame" x="120" y="407" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="LNR-E8-pB0"/>
-                                    <constraint firstAttribute="width" secondItem="H8F-aj-hcs" secondAttribute="height" multiplier="1:1" id="XVr-n7-tF7"/>
-                                </constraints>
-                                <state key="normal" image="thirtyDays_off"/>
-                                <state key="highlighted" image="thirtyDays_on"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-7y-WhC" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
-                                <rect key="frame" x="196" y="331" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kq9-7y-WhC" secondAttribute="height" multiplier="1:1" id="Jv9-x4-BxF"/>
-                                    <constraint firstAttribute="width" constant="60" id="gIt-1g-Jmm"/>
-                                </constraints>
-                                <state key="normal" image="sevenDays_off"/>
-                                <state key="highlighted" image="sevenDays_on"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-3J-YSo" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
-                                <rect key="frame" x="196" y="407" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qzM-3J-YSo" secondAttribute="height" multiplier="1:1" id="3c3-kc-u6z"/>
-                                    <constraint firstAttribute="width" constant="60" id="NS6-ek-PrQ"/>
-                                </constraints>
-                                <state key="normal" image="customDays_off"/>
-                                <state key="highlighted" image="customDays_on"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.80784313725490198" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tVZ-Dr-520" firstAttribute="width" secondItem="1PW-cA-XfP" secondAttribute="width" multiplier="0.9" id="17k-qQ-KBz"/>
                             <constraint firstItem="Eaz-KE-4gp" firstAttribute="bottom" secondItem="sQ5-bJ-Q2A" secondAttribute="centerY" id="1K3-LO-CfN"/>
                             <constraint firstItem="Eaz-KE-4gp" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="4Fk-CE-Ajf"/>
-                            <constraint firstItem="tVZ-Dr-520" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="6as-kR-FXt"/>
-                            <constraint firstItem="H8F-aj-hcs" firstAttribute="trailing" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="-8" id="7Oy-kd-gJu"/>
-                            <constraint firstItem="qzM-3J-YSo" firstAttribute="leading" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="8" id="8Pg-jX-gV0"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="width" secondItem="1PW-cA-XfP" secondAttribute="width" multiplier="0.9" id="7sw-84-pk9"/>
                             <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="top" secondItem="1zJ-4k-R73" secondAttribute="bottom" constant="16" id="CTS-jx-H11"/>
-                            <constraint firstItem="H8F-aj-hcs" firstAttribute="top" secondItem="FLV-Jh-38d" secondAttribute="bottom" constant="16" id="CW8-Oi-88d"/>
-                            <constraint firstItem="FLV-Jh-38d" firstAttribute="trailing" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="-8" id="CpD-6K-0ik"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="centerY" secondItem="1PW-cA-XfP" secondAttribute="centerY" multiplier="1.25" id="I3f-cb-zgf"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="IbG-v9-Cbn"/>
                             <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="L8z-GT-DUA"/>
-                            <constraint firstItem="Kq9-7y-WhC" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="bottom" constant="16" id="PAr-Q3-6xb"/>
                             <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="width" secondItem="sQ5-bJ-Q2A" secondAttribute="height" multiplier="1:1" id="VfG-5n-h4N"/>
-                            <constraint firstItem="Kq9-7y-WhC" firstAttribute="leading" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="8" id="XBb-aj-jPQ"/>
                             <constraint firstItem="Eaz-KE-4gp" firstAttribute="top" secondItem="1PW-cA-XfP" secondAttribute="topMargin" id="YBS-zr-vkV"/>
                             <constraint firstItem="Eaz-KE-4gp" firstAttribute="width" secondItem="1PW-cA-XfP" secondAttribute="width" id="cjl-Fx-wF7"/>
-                            <constraint firstItem="ZWB-Zf-hfr" firstAttribute="top" secondItem="FIt-p2-bEa" secondAttribute="bottom" constant="16" id="h7O-Wq-VyG"/>
-                            <constraint firstItem="FLV-Jh-38d" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="bottom" constant="16" id="hpX-TT-1U2"/>
-                            <constraint firstItem="qzM-3J-YSo" firstAttribute="top" secondItem="Kq9-7y-WhC" secondAttribute="bottom" constant="16" id="rnk-1e-mv7"/>
-                            <constraint firstItem="tVZ-Dr-520" firstAttribute="top" secondItem="sQ5-bJ-Q2A" secondAttribute="bottom" constant="16" id="uRX-DN-th4"/>
-                            <constraint firstItem="FIt-p2-bEa" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="vwx-tK-Jqd"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="height" secondItem="1PW-cA-XfP" secondAttribute="height" multiplier="0.5" id="mWp-Qh-FiV"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -163,6 +163,7 @@
                         <outlet property="imgShrine" destination="sQ5-bJ-Q2A" id="yAN-Gi-XPL"/>
                         <outlet property="lblNickname" destination="G4j-S7-Flr" id="Iaq-eJ-AN3"/>
                         <outlet property="txtNickname" destination="wQZ-Eb-deW" id="Ahf-6W-1uh"/>
+                        <outlet property="viewContainsControlSets" destination="tVZ-Dr-520" id="BF6-q7-yy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yi-on-R9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,8 +411,8 @@
     <resources>
         <image name="btnCancel_off" width="227" height="80"/>
         <image name="btnCancel_on" width="227" height="80"/>
-        <image name="btnGo_off" width="225" height="80"/>
-        <image name="btnGo_on" width="225" height="80"/>
+        <image name="btnGo_wide_off" width="241" height="86"/>
+        <image name="btnGo_wide_on" width="235" height="86"/>
         <image name="btnListClose_off" width="227" height="80"/>
         <image name="btnListClose_on" width="227" height="80"/>
         <image name="btnList_off" width="227" height="80"/>

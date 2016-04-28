@@ -57,16 +57,17 @@ class Main_Model: ViewModel, CLLocationManagerDelegate {
   func doWasCreated() {
     if let master = self.master as? MainViewController {
       let brain = getAppDelegate().GPS_Brain
-      let mapView = MKMapView()
-      mapView.alpha = 0
-      brain.focus = mapView
-      brain.getCurrentLocation()
-      master.viewContainsMap.addSubview(mapView)
-      mapView.frame = master.view.frame
-      mapView.center = master.view.center
-      mapView.userInteractionEnabled = false
-//      mapView.setRegion(region, animated: true)
-      
+      master.mapView = MKMapView()
+      SAFE (master.mapView) { mapView in
+        mapView.alpha = 0
+        brain.focus = mapView
+        brain.getCurrentLocation()
+        master.viewContainsMap.addSubview(mapView)
+        mapView.frame = master.view.frame
+        mapView.center = master.view.center
+        mapView.userInteractionEnabled = false
+  //      mapView.setRegion(region, animated: true)      
+      }
     }
   }
   

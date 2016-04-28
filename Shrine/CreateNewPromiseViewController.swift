@@ -20,6 +20,7 @@ class CreateNewPromiseViewController: BetterViewController {
   @IBOutlet weak var btnSevenDays: SegmentedButton!
   @IBOutlet weak var btnThirtyDays: SegmentedButton!
   @IBOutlet weak var btnCustomDays: SegmentedButton!
+  @IBOutlet weak var viewContainsControlSets: UIView!
   
 
   @IBAction func typedInNickname(sender: UITextField) {  }
@@ -111,7 +112,7 @@ class CreateNewPromiseViewController: BetterViewController {
   
   func willAskForConsequences(type: MoralCondition) {
     //  check text fields and then...
-    self.view.blur()
+    self.view.blur(1, style: .Dark)
     doAskForConsequences(type)
   }
   
@@ -216,6 +217,7 @@ class CreateNewPromiseViewController: BetterViewController {
   }
   
   func willAppearStuff() {
+    viewContainsControlSets.layer.cornerRadius = 8  // why 8?
     
   }
   
