@@ -31,18 +31,36 @@ enum SlideDirection {
   case right
 }
 
-enum Reward: String {
-  case robot = "robot"
-  case cake = "cake"
-  case goblet = "goblet"
+enum MoralCondition {
+  case good
+  case bad
 }
-  // bad code
-let rewards: [Reward] = [.robot, .cake, .goblet]
 
-enum Punishment: String {
-  case fire = "fire"
-  case war = "war"
-  case gelatinousCube = "gelatinousCube"
+enum Consequence: String {
+  case good_robot = "robot"
+  case good_cake = "cake"
+  case good_goblet = "goblet"
+  case bad_fire = "imgStepIndicatorOne"
+  case bad_war = "imgStepIndicatorTwo"
+  case bad_jail = "imgStepIndicatorThree"
 }
   // bad code
-let punishments: [Punishment] = [.fire, .war, .gelatinousCube]
+
+
+
+
+
+
+enum VC: String {
+  case main = "MainView"
+  case createPromise = "CreatePromiseView"
+  case listPromises = "ListPromisesView"
+  case promiseDetail = "PromiseDetailView"
+  
+}
+
+enum Segue: String {
+  case fromMainToList = "fromMainToList"
+  case fromListToDetail = "fromListToDetail"
+  case fromMainToCreate = "fromMainToCreate"
+}

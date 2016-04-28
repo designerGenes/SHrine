@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 
-class CoolButton: UIControl {
-
+class SegmentedButton: UIButton {
+  static var activeButton: SegmentedButton?
+  
 }

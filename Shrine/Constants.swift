@@ -9,3 +9,4 @@
 import Foundation
 
 let GLOBAL_FADE_TIME: NSTimeInterval = 0.75
+let MAX_CONSEQUENCES = 3

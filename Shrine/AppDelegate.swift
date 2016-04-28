@@ -11,12 +11,15 @@ import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  typealias moralConsequenceHash = [MoralCondition:[Consequence]]
+  
   var window: UIWindow?
   var GPS_Brain: GPSBrain!
   var bundle: NSBundle!
   let GENERIC_ERROR = "Oh lawd Jesus it's on fire!"
   var currentDominantVC: BetterViewController?
+  var storyboard: UIStoryboard!
+  var consequences: moralConsequenceHash!
 
   
   // MARK: -- appDelegate functions
@@ -27,6 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GPS_Brain = GPSBrain()
     UIApplication.sharedApplication().statusBarStyle = .LightContent
     bundle = NSBundle(forClass: self.dynamicType)
+    storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    
+    consequences = [
+      .good: [.good_robot, .good_cake, .good_goblet],
+      .bad : [.bad_fire, .bad_war, .bad_jail]
+    ]
+    
     return true
     
   }

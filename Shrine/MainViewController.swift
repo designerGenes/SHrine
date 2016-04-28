@@ -11,9 +11,6 @@ import MapKit
 import ChameleonFramework
 
 class MainViewController: BetterViewController {
-  enum Segue: String {
-    case toListPosts = "toListPosts"
-  }
   
   
   // MARK: -- outlets
@@ -24,7 +21,7 @@ class MainViewController: BetterViewController {
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
 
   // MARK: -- variables
-  var createNewPromiseView: CreateNewPromiseView?
+  var createNewPromiseView: CreateNewPromiseViewController?
   var mapObject: MKMapView? { didSet { loadMapViewIntoContainer()} }
 
   // MARK: -- custom functions
@@ -35,7 +32,7 @@ class MainViewController: BetterViewController {
       switch id {
       case 0:  // list
         print("Clicked 0")
-        self.doSegue(.toListPosts)
+        self.performSegueWithIdentifier(Segue.fromMainToList.rawValue, sender: nil)
       case 1:  // new
         model.doCreateNewPromise()
       case 2:  // help
@@ -78,14 +75,13 @@ class MainViewController: BetterViewController {
   }
   
   // MARK: -- segue functions
-  func doSegue(id: Segue, withItem: AnyObject? = nil) {
-    performSegueWithIdentifier(id.rawValue, sender: withItem)
-  }
+  
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     SAFE(sender) { sender in
       
     }
+    super.prepareForSegue(segue, sender: sender)
   }
 
   // MARK: -- required functions

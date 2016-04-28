@@ -13,9 +13,9 @@
 		A8EDD49D1CD1A83E00B171FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD49C1CD1A83E00B171FE /* Assets.xcassets */; };
 		A8EDD4A01CD1A83E00B171FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD49E1CD1A83E00B171FE /* LaunchScreen.storyboard */; };
 		A8EDD4D31CD1A8CA00B171FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C31CD1A8CA00B171FE /* Constants.swift */; };
-		A8EDD4D41CD1A8CA00B171FE /* CoolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C41CD1A8CA00B171FE /* CoolButton.swift */; };
+		A8EDD4D41CD1A8CA00B171FE /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */; };
 		A8EDD4D51CD1A8CA00B171FE /* CreateNewPromise.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4C51CD1A8CA00B171FE /* CreateNewPromise.xib */; };
-		A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseView.swift */; };
+		A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift */; };
 		A8EDD4D71CD1A8CA00B171FE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C71CD1A8CA00B171FE /* Enums.swift */; };
 		A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */; };
 		A8EDD4D91CD1A8CA00B171FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4C91CD1A8CA00B171FE /* Info.plist */; };
@@ -45,6 +45,7 @@
 		A8EDD5061CD1AA4500B171FE /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */; };
 		A8EDD5071CD1AA4500B171FE /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */; };
 		A8EDD5081CD1AA4500B171FE /* BetterAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */; };
+		A8EDD50E1CD1E61300B171FE /* CreateNew_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +75,9 @@
 		A8EDD4A61CD1A83E00B171FE /* ShrineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShrineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EDD4B11CD1A83E00B171FE /* ShrineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShrineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EDD4C31CD1A8CA00B171FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A8EDD4C41CD1A8CA00B171FE /* CoolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolButton.swift; sourceTree = "<group>"; };
+		A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
 		A8EDD4C51CD1A8CA00B171FE /* CreateNewPromise.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateNewPromise.xib; sourceTree = "<group>"; };
-		A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPromiseView.swift; sourceTree = "<group>"; };
+		A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewPromiseViewController.swift; sourceTree = "<group>"; };
 		A8EDD4C71CD1A8CA00B171FE /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSBrain.swift; sourceTree = "<group>"; };
 		A8EDD4C91CD1A8CA00B171FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dispatch.swift; path = "../REUSABLE FILES/Dispatch.swift"; sourceTree = SOURCE_ROOT; };
 		A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Randomizer.swift; path = "../REUSABLE FILES/Randomizer.swift"; sourceTree = SOURCE_ROOT; };
 		A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BetterAlert.swift; path = "../REUSABLE FILES/BetterAlert.swift"; sourceTree = SOURCE_ROOT; };
+		A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNew_Model.swift; sourceTree = "<group>"; };
 		ABCAB3AA2D1085385DF09976 /* Pods-Shrine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.debug.xcconfig"; sourceTree = "<group>"; };
 		BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shrine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,13 +193,10 @@
 		A8EDD4E51CD1A90400B171FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseView.swift */,
-				A8EDD4CA1CD1A8CA00B171FE /* ListPromises_Model.swift */,
-				A8EDD4CB1CD1A8CA00B171FE /* ListPromisesViewController.swift */,
-				A8EDD4CC1CD1A8CA00B171FE /* Main_Model.swift */,
-				A8EDD4CD1CD1A8CA00B171FE /* MainViewController.swift */,
-				A8EDD4CF1CD1A8CA00B171FE /* PromiseDetail_Model.swift */,
-				A8EDD4D01CD1A8CA00B171FE /* PromiseDetailViewController.swift */,
+				A8EDD50C1CD1BE3600B171FE /* CreateNewPromises */,
+				A8EDD5091CD1BE1600B171FE /* ListPromises */,
+				A8EDD50A1CD1BE1F00B171FE /* Main */,
+				A8EDD50B1CD1BE2400B171FE /* PromiseDetail */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -205,17 +204,17 @@
 		A8EDD4E61CD1A91600B171FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A8EDD4F91CD1AA4500B171FE /* extensions.swift */,
-				A8EDD4FA1CD1AA4500B171FE /* BetterViewController.swift */,
 				A8EDD4FB1CD1AA4500B171FE /* AnimationsLibrary.swift */,
+				A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */,
+				A8EDD4FA1CD1AA4500B171FE /* BetterViewController.swift */,
+				A8EDD4C31CD1A8CA00B171FE /* Constants.swift */,
+				A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */,
+				A8EDD4C71CD1A8CA00B171FE /* Enums.swift */,
+				A8EDD4F91CD1AA4500B171FE /* extensions.swift */,
+				A8EDD4D11CD1A8CA00B171FE /* Protocols.swift */,
+				A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */,
 				A8EDD4FC1CD1AA4500B171FE /* Safe.swift */,
 				A8EDD4FD1CD1AA4500B171FE /* ViewModel.swift */,
-				A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */,
-				A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */,
-				A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */,
-				A8EDD4C31CD1A8CA00B171FE /* Constants.swift */,
-				A8EDD4C71CD1A8CA00B171FE /* Enums.swift */,
-				A8EDD4D11CD1A8CA00B171FE /* Protocols.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -223,7 +222,7 @@
 		A8EDD4E71CD1A92700B171FE /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				A8EDD4C41CD1A8CA00B171FE /* CoolButton.swift */,
+				A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */,
 				A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */,
 				A8EDD4CE1CD1A8CA00B171FE /* Promise.swift */,
 				A8EDD4D21CD1A8CA00B171FE /* RewardButton.swift */,
@@ -239,6 +238,42 @@
 				A8EDD4991CD1A83E00B171FE /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A8EDD5091CD1BE1600B171FE /* ListPromises */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD4CA1CD1A8CA00B171FE /* ListPromises_Model.swift */,
+				A8EDD4CB1CD1A8CA00B171FE /* ListPromisesViewController.swift */,
+			);
+			name = ListPromises;
+			sourceTree = "<group>";
+		};
+		A8EDD50A1CD1BE1F00B171FE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD4CC1CD1A8CA00B171FE /* Main_Model.swift */,
+				A8EDD4CD1CD1A8CA00B171FE /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		A8EDD50B1CD1BE2400B171FE /* PromiseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD4CF1CD1A8CA00B171FE /* PromiseDetail_Model.swift */,
+				A8EDD4D01CD1A8CA00B171FE /* PromiseDetailViewController.swift */,
+			);
+			name = PromiseDetail;
+			sourceTree = "<group>";
+		};
+		A8EDD50C1CD1BE3600B171FE /* CreateNewPromises */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD4C61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift */,
+				A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */,
+			);
+			name = CreateNewPromises;
 			sourceTree = "<group>";
 		};
 		E2A1D7AFA83B0EC19756F69A /* Frameworks */ = {
@@ -328,6 +363,7 @@
 				TargetAttributes = {
 					A8EDD4911CD1A83E00B171FE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 34UPXC5NSF;
 					};
 					A8EDD4A51CD1A83E00B171FE = {
 						CreatedOnToolsVersion = 7.3;
@@ -448,9 +484,10 @@
 				A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */,
 				A8EDD5021CD1AA4500B171FE /* BetterViewController.swift in Sources */,
 				A8EDD4DA1CD1A8CA00B171FE /* ListPromises_Model.swift in Sources */,
+				A8EDD50E1CD1E61300B171FE /* CreateNew_Model.swift in Sources */,
 				A8EDD5081CD1AA4500B171FE /* BetterAlert.swift in Sources */,
 				A8EDD5061CD1AA4500B171FE /* Dispatch.swift in Sources */,
-				A8EDD4D41CD1A8CA00B171FE /* CoolButton.swift in Sources */,
+				A8EDD4D41CD1A8CA00B171FE /* SegmentedButton.swift in Sources */,
 				A8EDD4E01CD1A8CA00B171FE /* PromiseDetailViewController.swift in Sources */,
 				A8EDD4DB1CD1A8CA00B171FE /* ListPromisesViewController.swift in Sources */,
 				A8EDD4961CD1A83E00B171FE /* AppDelegate.swift in Sources */,
@@ -460,7 +497,7 @@
 				A8EDD5041CD1AA4500B171FE /* Safe.swift in Sources */,
 				A8EDD5011CD1AA4500B171FE /* extensions.swift in Sources */,
 				A8EDD5071CD1AA4500B171FE /* Randomizer.swift in Sources */,
-				A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseView.swift in Sources */,
+				A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift in Sources */,
 				A8EDD5031CD1AA4500B171FE /* AnimationsLibrary.swift in Sources */,
 				A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */,
 				A8EDD4E21CD1A8CA00B171FE /* RewardButton.swift in Sources */,
@@ -605,6 +642,8 @@
 			baseConfigurationReference = ABCAB3AA2D1085385DF09976 /* Pods-Shrine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -613,6 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DesignerJeans.Shrine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -621,6 +661,8 @@
 			baseConfigurationReference = A4531958F492130671B663BD /* Pods-Shrine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -629,6 +671,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DesignerJeans.Shrine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -3,15 +3,177 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Create New Promise View Controller-->
+        <scene sceneID="9e7-gD-vkf">
+            <objects>
+                <viewController storyboardIdentifier="CreatePromiseView" id="UI2-TJ-gfQ" customClass="CreateNewPromiseViewController" customModule="Shrine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1zJ-4k-R73"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZWB-Zf-hfr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1PW-cA-XfP" userLabel="Overarching">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eaz-KE-4gp" userLabel="TopLayoutView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0I-Zi-dXI">
+                                        <rect key="frame" x="36" y="36" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r0I-Zi-dXI" secondAttribute="height" multiplier="1:1" id="7wZ-E3-9wo"/>
+                                            <constraint firstAttribute="width" constant="40" id="edm-td-Zjq"/>
+                                        </constraints>
+                                        <state key="normal" image="squareBtnCancel_off"/>
+                                        <state key="highlighted" image="squareBtnCancel_on"/>
+                                        <connections>
+                                            <segue destination="xD3-WJ-7cX" kind="unwind" unwindAction="unwindToMain:" id="qaC-pY-xsy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.074509803921568626" green="0.078431372549019607" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="r0I-Zi-dXI" firstAttribute="centerX" secondItem="Eaz-KE-4gp" secondAttribute="centerX" multiplier="0.3" id="9WN-Ia-L9F"/>
+                                    <constraint firstItem="r0I-Zi-dXI" firstAttribute="top" secondItem="Eaz-KE-4gp" secondAttribute="top" constant="36" id="gbZ-Ps-giU"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgShrine" translatesAutoresizingMaskIntoConstraints="NO" id="sQ5-bJ-Q2A">
+                                <rect key="frame" x="112" y="36" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sQ5-bJ-Q2A" secondAttribute="height" multiplier="1:1" id="YKT-XJ-rHJ"/>
+                                    <constraint firstAttribute="width" constant="151" id="vBJ-PP-wBJ"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVZ-Dr-520">
+                                <rect key="frame" x="19" y="203" width="337" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shrine Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-S7-Flr">
+                                        <rect key="frame" x="51" y="42" width="235" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQZ-Eb-deW">
+                                        <rect key="frame" x="51" y="64" width="235" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="typedInNickname:" destination="UI2-TJ-gfQ" eventType="editingDidEnd" id="yHM-Ju-aIo"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.098039215686274508" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="width" secondItem="wQZ-Eb-deW" secondAttribute="width" id="2Xe-Pf-Tfi"/>
+                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="bottom" secondItem="tVZ-Dr-520" secondAttribute="centerY" constant="8" id="8zC-cL-8Eg"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="Ors-5q-4sn"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="width" secondItem="tVZ-Dr-520" secondAttribute="width" multiplier="0.7" id="TbO-II-jab"/>
+                                    <constraint firstItem="wQZ-Eb-deW" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="centerY" constant="8" id="dUw-C7-CKZ"/>
+                                    <constraint firstItem="G4j-S7-Flr" firstAttribute="centerX" secondItem="tVZ-Dr-520" secondAttribute="centerX" id="kmU-Ju-OuG"/>
+                                    <constraint firstAttribute="width" secondItem="tVZ-Dr-520" secondAttribute="height" multiplier="3:1" id="yq5-DM-LLe"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-p2-bEa">
+                                <rect key="frame" x="75" y="571" width="225" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FIt-p2-bEa" secondAttribute="height" multiplier="45:16" id="GqV-6E-8vs"/>
+                                    <constraint firstAttribute="height" constant="80" id="hyH-KJ-h89"/>
+                                </constraints>
+                                <state key="normal" image="btnGo_off"/>
+                                <state key="highlighted" image="btnGo_on"/>
+                                <connections>
+                                    <action selector="clickedGo:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="i2i-sY-kmc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLV-Jh-38d" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                <rect key="frame" x="120" y="331" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FLV-Jh-38d" secondAttribute="height" multiplier="1:1" id="tW4-Ty-DN7"/>
+                                    <constraint firstAttribute="width" constant="60" id="y5r-Zb-ueE"/>
+                                </constraints>
+                                <state key="normal" image="oneDay_off"/>
+                                <state key="highlighted" image="oneDay_on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-aj-hcs" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                <rect key="frame" x="120" y="407" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="LNR-E8-pB0"/>
+                                    <constraint firstAttribute="width" secondItem="H8F-aj-hcs" secondAttribute="height" multiplier="1:1" id="XVr-n7-tF7"/>
+                                </constraints>
+                                <state key="normal" image="thirtyDays_off"/>
+                                <state key="highlighted" image="thirtyDays_on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-7y-WhC" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                <rect key="frame" x="196" y="331" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kq9-7y-WhC" secondAttribute="height" multiplier="1:1" id="Jv9-x4-BxF"/>
+                                    <constraint firstAttribute="width" constant="60" id="gIt-1g-Jmm"/>
+                                </constraints>
+                                <state key="normal" image="sevenDays_off"/>
+                                <state key="highlighted" image="sevenDays_on"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-3J-YSo" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                <rect key="frame" x="196" y="407" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qzM-3J-YSo" secondAttribute="height" multiplier="1:1" id="3c3-kc-u6z"/>
+                                    <constraint firstAttribute="width" constant="60" id="NS6-ek-PrQ"/>
+                                </constraints>
+                                <state key="normal" image="customDays_off"/>
+                                <state key="highlighted" image="customDays_on"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019607843137" green="0.80784313725490198" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="width" secondItem="1PW-cA-XfP" secondAttribute="width" multiplier="0.9" id="17k-qQ-KBz"/>
+                            <constraint firstItem="Eaz-KE-4gp" firstAttribute="bottom" secondItem="sQ5-bJ-Q2A" secondAttribute="centerY" id="1K3-LO-CfN"/>
+                            <constraint firstItem="Eaz-KE-4gp" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="4Fk-CE-Ajf"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="6as-kR-FXt"/>
+                            <constraint firstItem="H8F-aj-hcs" firstAttribute="trailing" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="-8" id="7Oy-kd-gJu"/>
+                            <constraint firstItem="qzM-3J-YSo" firstAttribute="leading" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="8" id="8Pg-jX-gV0"/>
+                            <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="top" secondItem="1zJ-4k-R73" secondAttribute="bottom" constant="16" id="CTS-jx-H11"/>
+                            <constraint firstItem="H8F-aj-hcs" firstAttribute="top" secondItem="FLV-Jh-38d" secondAttribute="bottom" constant="16" id="CW8-Oi-88d"/>
+                            <constraint firstItem="FLV-Jh-38d" firstAttribute="trailing" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="-8" id="CpD-6K-0ik"/>
+                            <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="L8z-GT-DUA"/>
+                            <constraint firstItem="Kq9-7y-WhC" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="bottom" constant="16" id="PAr-Q3-6xb"/>
+                            <constraint firstItem="sQ5-bJ-Q2A" firstAttribute="width" secondItem="sQ5-bJ-Q2A" secondAttribute="height" multiplier="1:1" id="VfG-5n-h4N"/>
+                            <constraint firstItem="Kq9-7y-WhC" firstAttribute="leading" secondItem="1PW-cA-XfP" secondAttribute="centerX" constant="8" id="XBb-aj-jPQ"/>
+                            <constraint firstItem="Eaz-KE-4gp" firstAttribute="top" secondItem="1PW-cA-XfP" secondAttribute="topMargin" id="YBS-zr-vkV"/>
+                            <constraint firstItem="Eaz-KE-4gp" firstAttribute="width" secondItem="1PW-cA-XfP" secondAttribute="width" id="cjl-Fx-wF7"/>
+                            <constraint firstItem="ZWB-Zf-hfr" firstAttribute="top" secondItem="FIt-p2-bEa" secondAttribute="bottom" constant="16" id="h7O-Wq-VyG"/>
+                            <constraint firstItem="FLV-Jh-38d" firstAttribute="top" secondItem="tVZ-Dr-520" secondAttribute="bottom" constant="16" id="hpX-TT-1U2"/>
+                            <constraint firstItem="qzM-3J-YSo" firstAttribute="top" secondItem="Kq9-7y-WhC" secondAttribute="bottom" constant="16" id="rnk-1e-mv7"/>
+                            <constraint firstItem="tVZ-Dr-520" firstAttribute="top" secondItem="sQ5-bJ-Q2A" secondAttribute="bottom" constant="16" id="uRX-DN-th4"/>
+                            <constraint firstItem="FIt-p2-bEa" firstAttribute="centerX" secondItem="1PW-cA-XfP" secondAttribute="centerX" id="vwx-tK-Jqd"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btnCustomDays" destination="qzM-3J-YSo" id="y52-FE-V7w"/>
+                        <outlet property="btnGo" destination="FIt-p2-bEa" id="eqW-WR-EOY"/>
+                        <outlet property="btnOneDay" destination="FLV-Jh-38d" id="VsP-rU-bfv"/>
+                        <outlet property="btnSevenDays" destination="Kq9-7y-WhC" id="j0c-Tc-mpy"/>
+                        <outlet property="btnThirtyDays" destination="H8F-aj-hcs" id="KjN-DV-zx4"/>
+                        <outlet property="imgShrine" destination="sQ5-bJ-Q2A" id="yAN-Gi-XPL"/>
+                        <outlet property="lblNickname" destination="G4j-S7-Flr" id="Iaq-eJ-AN3"/>
+                        <outlet property="txtNickname" destination="wQZ-Eb-deW" id="Ahf-6W-1uh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yi-on-R9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xD3-WJ-7cX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-213.5" y="-398.5"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="CountArrivals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="Shrine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -111,17 +273,18 @@
                         <outlet property="btnGoToList" destination="2cD-Ks-dfY" id="Y4N-SR-Lat"/>
                         <outlet property="btnNew" destination="ySq-rN-HLT" id="lsd-Zb-SxM"/>
                         <outlet property="viewContainsMap" destination="rce-Bh-uod" id="Fcm-ZR-Uky"/>
-                        <segue destination="uoS-kk-sPb" kind="presentation" identifier="toListPosts" id="kSE-gl-4bN"/>
+                        <segue destination="uoS-kk-sPb" kind="presentation" identifier="fromMainToList" id="kSE-gl-4bN"/>
+                        <segue destination="UI2-TJ-gfQ" kind="show" identifier="fromMainToCreate" id="I9V-mh-93m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-213.5" y="325.5"/>
+            <point key="canvasLocation" x="-218.5" y="325.5"/>
         </scene>
         <!--List Promises View Controller-->
         <scene sceneID="3M3-yv-1oM">
             <objects>
-                <viewController storyboardIdentifier="PromiseListView" id="uoS-kk-sPb" customClass="ListPromisesViewController" customModule="CountArrivals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListPromisesView" id="uoS-kk-sPb" customClass="ListPromisesViewController" customModule="Shrine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c5x-vs-4nC"/>
                         <viewControllerLayoutGuide type="bottom" id="LgQ-Oa-Xix"/>
@@ -181,17 +344,18 @@
                     <connections>
                         <outlet property="btnCancel" destination="dCV-H4-SAg" id="35x-3X-SMb"/>
                         <outlet property="tblPosts" destination="QkP-47-d6Z" id="58b-Pp-7gv"/>
+                        <segue destination="LSK-Ti-JvG" kind="presentation" identifier="fromListToDetail" id="BRC-j3-w7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wta-wc-HKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RBt-Es-UQp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="183.5" y="325.5"/>
+            <point key="canvasLocation" x="200.5" y="325.5"/>
         </scene>
         <!--Promise Detail View Controller-->
         <scene sceneID="5kv-uj-6lo">
             <objects>
-                <viewController storyboardIdentifier="PromiseDetailsView" id="LSK-Ti-JvG" customClass="PromiseDetailViewController" customModule="CountArrivals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PromiseDetailView" id="LSK-Ti-JvG" customClass="PromiseDetailViewController" customModule="Shrine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uqn-Me-b02"/>
                         <viewControllerLayoutGuide type="bottom" id="sTQ-I7-NSZ"/>
@@ -240,12 +404,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFY-hk-NYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585.5" y="325.5"/>
+            <point key="canvasLocation" x="631.5" y="325.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="btnCancel_off" width="227" height="80"/>
         <image name="btnCancel_on" width="227" height="80"/>
+        <image name="btnGo_off" width="225" height="80"/>
+        <image name="btnGo_on" width="225" height="80"/>
         <image name="btnListClose_off" width="227" height="80"/>
         <image name="btnListClose_on" width="227" height="80"/>
         <image name="btnList_off" width="227" height="80"/>
@@ -253,6 +419,17 @@
         <image name="btnNew_off" width="227" height="80"/>
         <image name="btnNew_on" width="227" height="80"/>
         <image name="btnPunishmentFire" width="183" height="183"/>
+        <image name="customDays_off" width="86" height="86"/>
+        <image name="customDays_on" width="86" height="86"/>
+        <image name="imgShrine" width="167" height="167"/>
+        <image name="oneDay_off" width="86" height="86"/>
+        <image name="oneDay_on" width="86" height="86"/>
         <image name="pin_up" width="183" height="183"/>
+        <image name="sevenDays_off" width="86" height="86"/>
+        <image name="sevenDays_on" width="86" height="86"/>
+        <image name="squareBtnCancel_off" width="86" height="86"/>
+        <image name="squareBtnCancel_on" width="86" height="86"/>
+        <image name="thirtyDays_off" width="86" height="86"/>
+        <image name="thirtyDays_on" width="86" height="86"/>
     </resources>
 </document>

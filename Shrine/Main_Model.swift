@@ -17,22 +17,28 @@ class Main_Model: ViewModel, CLLocationManagerDelegate {
 
   // MARK: -- createNPView functions
   func doCreateNewPromise() {
-    SAFECAST(master, type: MainViewController.self) { master in
-      if let createNPView = master.loadViewFromNib("CreateNewPromise") as? CreateNewPromiseView {
-        master.createNewPromiseView = createNPView
-        master.view.blur(.Dark)
-        createNPView.alpha = 0
-        createNPView.frame = master.view.frame
-//        createNPView.bounds = CGRectMake(0, 0, self.master.view.frame.width, self.master.view.frame.height * 0.7)
-        master.view.addSubview(createNPView)
-        createNPView.center.x = master.view.center.x
-        createNPView.fadeIn()
-        createNPView.displayChoices()
-//        createNPView.slide(.right)
-        
-        
-      }
-     
+//    SAFECAST(master, type: MainViewController.self) { master in 
+    if let master = master as? MainViewController {
+      master.performSegueWithIdentifier(Segue.fromMainToCreate.rawValue, sender: nil)
+      
+//      view.slide(.down, distance: nil)
+      
+//      if let createNPView = master.loadViewFromNib("CreateNewPromise") as? CreateNewPromiseView {
+//        master.createNewPromiseView = createNPView
+//        master.view.blur(.Dark)
+//        createNPView.alpha = 0
+//        createNPView.frame = master.view.frame
+////        createNPView.bounds = CGRectMake(0, 0, self.master.view.frame.width, self.master.view.frame.height * 0.7)
+//        master.view.addSubview(createNPView)
+//        createNPView.center.x = master.view.center.x
+//        createNPView.fadeIn()
+//        createNPView.kickstartCycle()
+////        createNPView.displayChoices()
+////        createNPView.slide(.right)
+//        
+//        
+//      }
+//     
     }
   
   }
