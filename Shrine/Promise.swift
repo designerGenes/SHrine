@@ -34,8 +34,13 @@ class Promise: NSManagedObject {
     return nil
   }
   
+  func setValues(interval: Int, _ reward: String, _ punishment: String) {
+    self.interval = interval ; self.reward = reward ; self.punishment = punishment
+  }
+  
   
   // MARK: -- required functions
+  
 //  init(nickname: String, assocShrine: Shrine) {
 ////    self.locationNickname = nickname ; self.assocShrine = assocShrine
 ////    super.init()

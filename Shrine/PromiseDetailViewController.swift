@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import CoreData
+import Former
 
 class PromiseDetailViewController: BetterViewController {
   // MARK: -- outlets
   
+  @IBOutlet weak var tblPromiseDetails: UITableView!
+  @IBOutlet weak var viewContainsChain: UIView!
   
   // MARK: -- variables
-  
+  var focusID: NSManagedObjectID!
+  var former: Former!
   
   // MARK: -- custom functions
   func didLoadStuff() {
-    model = PromiseDetail_Model(master: self)
+    former = Former(tableView: tblPromiseDetails)
+    model = PromiseDetail_Model(master: self, id: focusID)
+    
+//    SAFECAST(model, type: PromiseDetail_Model.self) { $0.generateFormerCells(self.former) }  // put "wait" function here instead
   }
   
   func willAppearStuff() {
@@ -25,7 +33,9 @@ class PromiseDetailViewController: BetterViewController {
   }
   
   func didAppearStuff() {
-    
+//    SAFE(focusID) { id in
+//      self.lblID.text = String(id)
+//    }
   }
   
   // MARK: -- required functions

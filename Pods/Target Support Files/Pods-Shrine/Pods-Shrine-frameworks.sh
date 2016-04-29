@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Shrine/ChameleonFramework.framework"
   install_framework "Pods-Shrine/Former.framework"
   install_framework "Pods-Shrine/SwiftDateExtension.framework"
+  install_framework "Pods-Shrine/SwiftHEXColors.framework"
   install_framework "Pods-Shrine/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Shrine/ChameleonFramework.framework"
   install_framework "Pods-Shrine/Former.framework"
   install_framework "Pods-Shrine/SwiftDateExtension.framework"
+  install_framework "Pods-Shrine/SwiftHEXColors.framework"
   install_framework "Pods-Shrine/SwiftyJSON.framework"
 fi

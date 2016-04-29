@@ -67,13 +67,10 @@ class MainViewController: BetterViewController {
   }
 
   func didAppearStuff() {
-
-    
-    
-    viewContainsMap.clipsToBounds = true
-//    viewContainsMap.roundCorners()
-    
-    
+    SAFECAST(model, type: Main_Model.self) { model in
+    model.doWasCreated()
+    self.viewContainsMap.clipsToBounds = true
+    }
   }
   
   // MARK: -- segue functions

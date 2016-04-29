@@ -73,32 +73,44 @@
                                             <action selector="clickedGo:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="i2i-sY-kmc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-3J-YSo" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-3J-YSo" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
                                         <rect key="frame" x="54" y="205" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qzM-3J-YSo" secondAttribute="height" multiplier="1:1" id="3c3-kc-u6z"/>
                                             <constraint firstAttribute="width" constant="60" id="NS6-ek-PrQ"/>
                                         </constraints>
                                         <state key="normal" image="customDays_off"/>
+                                        <state key="selected" image="customDays_on"/>
                                         <state key="highlighted" image="customDays_on"/>
+                                        <connections>
+                                            <action selector="clickedInterval:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="KN7-ol-7rU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-7y-WhC" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-7y-WhC" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
                                         <rect key="frame" x="138" y="137" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Kq9-7y-WhC" secondAttribute="height" multiplier="1:1" id="Jv9-x4-BxF"/>
                                             <constraint firstAttribute="width" constant="60" id="gIt-1g-Jmm"/>
                                         </constraints>
                                         <state key="normal" image="sevenDays_off"/>
+                                        <state key="selected" image="sevenDays_on"/>
                                         <state key="highlighted" image="sevenDays_on"/>
+                                        <connections>
+                                            <action selector="clickedInterval:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="yTW-ms-qoc"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-aj-hcs" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8F-aj-hcs" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
                                         <rect key="frame" x="223" y="137" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="LNR-E8-pB0"/>
                                             <constraint firstAttribute="width" secondItem="H8F-aj-hcs" secondAttribute="height" multiplier="1:1" id="XVr-n7-tF7"/>
                                         </constraints>
                                         <state key="normal" image="thirtyDays_off"/>
+                                        <state key="selected" image="thirtyDays_on"/>
                                         <state key="highlighted" image="thirtyDays_on"/>
+                                        <connections>
+                                            <action selector="clickedInterval:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="rNY-Eb-Jco"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLV-Jh-38d" customClass="SegmentedButton" customModule="Shrine" customModuleProvider="target">
                                         <rect key="frame" x="54" y="137" width="60" height="60"/>
@@ -107,7 +119,11 @@
                                             <constraint firstAttribute="width" constant="60" id="y5r-Zb-ueE"/>
                                         </constraints>
                                         <state key="normal" image="oneDay_off"/>
+                                        <state key="selected" image="oneDay_on"/>
                                         <state key="highlighted" image="oneDay_on"/>
+                                        <connections>
+                                            <action selector="clickedInterval:" destination="UI2-TJ-gfQ" eventType="touchUpInside" id="BG6-bF-3sC"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shrine Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-S7-Flr">
                                         <rect key="frame" x="54" y="61" width="141" height="22"/>
@@ -317,13 +333,42 @@
                                 <rect key="frame" x="0.0" y="166" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tq6-Sk-gVP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPromise" id="tq6-Sk-gVP" customClass="PromiseTableViewCell" customModule="Shrine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tq6-Sk-gVP" id="bnx-ZI-ghB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="May-Gi-khr">
+                                                    <rect key="frame" x="24" y="11" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acy-HW-v48">
+                                                    <rect key="frame" x="333" y="9" width="26" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="acy-HW-v48" secondAttribute="height" multiplier="1:1" id="aQw-93-0ux"/>
+                                                    </constraints>
+                                                    <state key="normal" image="imgHealthy"/>
+                                                    <connections>
+                                                        <action selector="clickedHealthIndicator:" destination="tq6-Sk-gVP" eventType="touchUpInside" id="jXR-QE-VRD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="acy-HW-v48" firstAttribute="height" secondItem="bnx-ZI-ghB" secondAttribute="height" multiplier="0.6" id="dKF-o9-5Ed"/>
+                                                <constraint firstItem="acy-HW-v48" firstAttribute="centerY" secondItem="bnx-ZI-ghB" secondAttribute="centerY" id="ivz-JP-dpJ"/>
+                                                <constraint firstItem="May-Gi-khr" firstAttribute="centerY" secondItem="bnx-ZI-ghB" secondAttribute="centerY" id="jio-sJ-ekS"/>
+                                                <constraint firstItem="May-Gi-khr" firstAttribute="leading" secondItem="bnx-ZI-ghB" secondAttribute="leadingMargin" constant="16" id="orI-yF-uwD"/>
+                                                <constraint firstItem="acy-HW-v48" firstAttribute="trailing" secondItem="bnx-ZI-ghB" secondAttribute="trailingMargin" constant="-8" id="x7a-wn-1un"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnPromiseHealthIndicator" destination="acy-HW-v48" id="xU0-Ny-heQ"/>
+                                            <outlet property="lblShrineNickname" destination="May-Gi-khr" id="v24-X5-sFJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -345,7 +390,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnCancel" destination="dCV-H4-SAg" id="35x-3X-SMb"/>
-                        <outlet property="tblPosts" destination="QkP-47-d6Z" id="58b-Pp-7gv"/>
+                        <outlet property="tblPromises" destination="QkP-47-d6Z" id="4nN-Dp-bl9"/>
                         <segue destination="LSK-Ti-JvG" kind="presentation" identifier="fromListToDetail" id="BRC-j3-w7T"/>
                     </connections>
                 </viewController>
@@ -366,23 +411,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-6R-Tlq">
+                                <rect key="frame" x="36" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dMl-6R-Tlq" secondAttribute="height" multiplier="1:1" id="3uO-pk-Zoe"/>
+                                    <constraint firstAttribute="width" constant="40" id="Tb5-eY-mbd"/>
+                                </constraints>
+                                <state key="normal" image="squareBtnCancel_off">
+                                    <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" image="squareBtnCancel_on"/>
+                                <state key="focused" image="btnListClose_on"/>
+                                <connections>
+                                    <segue destination="TGd-8X-DgV" kind="unwind" unwindAction="unwindToList:" id="msS-C2-SDc"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUy-fw-jdO" userLabel="bodyView">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4t-Io-mTa">
-                                        <rect key="frame" x="20" y="90" width="335" height="282"/>
-                                        <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmk-Z5-IG9" userLabel="CONTAINER">
+                                        <rect key="frame" x="19" y="95" width="337" height="464"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4t-Io-mTa" userLabel="ViewContains">
+                                                <rect key="frame" x="0.0" y="-3" width="337" height="325"/>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-QD-OC1">
+                                                <rect key="frame" x="0.0" y="327" width="337" height="137"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sRZ-QD-OC1" secondAttribute="height" multiplier="338:137" id="AqY-eK-DvR"/>
+                                                </constraints>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.47450980390000003" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="G4t-Io-mTa" firstAttribute="centerX" secondItem="bmk-Z5-IG9" secondAttribute="centerX" id="3hb-Yt-ELv"/>
+                                            <constraint firstItem="sRZ-QD-OC1" firstAttribute="width" secondItem="bmk-Z5-IG9" secondAttribute="width" id="6x7-0R-7pU"/>
+                                            <constraint firstItem="G4t-Io-mTa" firstAttribute="width" secondItem="bmk-Z5-IG9" secondAttribute="width" id="7UU-km-2oA"/>
+                                            <constraint firstItem="sRZ-QD-OC1" firstAttribute="centerX" secondItem="bmk-Z5-IG9" secondAttribute="centerX" id="AhJ-uz-oMI"/>
+                                            <constraint firstAttribute="bottom" secondItem="sRZ-QD-OC1" secondAttribute="bottom" id="asK-da-hF2"/>
+                                            <constraint firstItem="G4t-Io-mTa" firstAttribute="height" secondItem="bmk-Z5-IG9" secondAttribute="height" multiplier="0.7" id="yrL-R3-ggq"/>
+                                        </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMl-6R-Tlq">
-                                        <rect key="frame" x="75" y="422" width="225" height="80"/>
-                                        <state key="normal" image="btnCancel_off">
-                                            <color key="titleColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted" image="btnCancel_on"/>
-                                        <state key="focused" image="btnListClose_on"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bmk-Z5-IG9" firstAttribute="width" secondItem="ZUy-fw-jdO" secondAttribute="width" multiplier="0.9" id="0OX-dD-MGt"/>
+                                    <constraint firstAttribute="bottom" secondItem="bmk-Z5-IG9" secondAttribute="bottom" constant="8" id="4Zj-Wc-ka4"/>
+                                    <constraint firstItem="bmk-Z5-IG9" firstAttribute="centerX" secondItem="ZUy-fw-jdO" secondAttribute="centerX" id="gFx-iY-yI2"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnPunishmentFire" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-4R-YxZ">
                                 <rect key="frame" x="112" y="36" width="151" height="151"/>
@@ -396,22 +474,29 @@
                         <constraints>
                             <constraint firstItem="ZUy-fw-jdO" firstAttribute="width" secondItem="4BK-k7-Ch2" secondAttribute="width" id="4ch-iq-4Ts"/>
                             <constraint firstItem="SA3-4R-YxZ" firstAttribute="top" secondItem="uqn-Me-b02" secondAttribute="bottom" constant="16" id="4lZ-e0-cHi"/>
+                            <constraint firstItem="bmk-Z5-IG9" firstAttribute="top" secondItem="SA3-4R-YxZ" secondAttribute="bottom" constant="8" id="PeC-eV-7Rh"/>
+                            <constraint firstItem="dMl-6R-Tlq" firstAttribute="top" secondItem="uqn-Me-b02" secondAttribute="bottom" constant="24" id="QWn-7z-Zvr"/>
                             <constraint firstItem="sTQ-I7-NSZ" firstAttribute="top" secondItem="ZUy-fw-jdO" secondAttribute="bottom" id="Tct-9s-4oL"/>
+                            <constraint firstItem="dMl-6R-Tlq" firstAttribute="centerX" secondItem="4BK-k7-Ch2" secondAttribute="centerX" multiplier="0.3" id="VqN-pk-Pbp"/>
                             <constraint firstItem="SA3-4R-YxZ" firstAttribute="centerX" secondItem="4BK-k7-Ch2" secondAttribute="centerX" id="i23-cp-600"/>
+                            <constraint firstItem="G4t-Io-mTa" firstAttribute="top" secondItem="SA3-4R-YxZ" secondAttribute="bottom" constant="5" id="vvK-7Y-IGR"/>
                             <constraint firstItem="ZUy-fw-jdO" firstAttribute="height" secondItem="4BK-k7-Ch2" secondAttribute="height" multiplier="0.85" id="wv6-aG-R2f"/>
                             <constraint firstItem="ZUy-fw-jdO" firstAttribute="centerX" secondItem="4BK-k7-Ch2" secondAttribute="centerX" id="yuo-tw-DXb"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tblPromiseDetails" destination="sRZ-QD-OC1" id="TRL-Tj-IE4"/>
+                        <outlet property="viewContainsChain" destination="G4t-Io-mTa" id="q7d-DK-oQt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFY-hk-NYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TGd-8X-DgV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="631.5" y="325.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="btnCancel_off" width="227" height="80"/>
-        <image name="btnCancel_on" width="227" height="80"/>
         <image name="btnGo_wide_off" width="241" height="86"/>
         <image name="btnGo_wide_on" width="235" height="86"/>
         <image name="btnListClose_off" width="227" height="80"/>
@@ -423,6 +508,7 @@
         <image name="btnPunishmentFire" width="183" height="183"/>
         <image name="customDays_off" width="86" height="86"/>
         <image name="customDays_on" width="86" height="86"/>
+        <image name="imgHealthy" width="200" height="200"/>
         <image name="imgShrine" width="167" height="167"/>
         <image name="oneDay_off" width="86" height="86"/>
         <image name="oneDay_on" width="85" height="86"/>

@@ -8,12 +8,14 @@
 
 import UIKit
 import ChameleonFramework
+import SwiftHEXColors
+import CoreData
 
 class ListPromisesViewController: BetterViewController {
   // MARK: -- outlets
   @IBOutlet weak var btnCancel: UIButton!
-  @IBOutlet weak var tblPosts: UITableView!
-  
+  @IBOutlet weak var tblPromises: UITableView!
+  @IBAction func unwindToList(segue: UIStoryboardSegue) {}
   
   // MARK: -- variables
   
@@ -21,6 +23,9 @@ class ListPromisesViewController: BetterViewController {
   // MARK: -- custom functions
   func didLoadStuff() {
     model = ListPromises_Model(master: self)
+    SAFECAST(model, type: ListPromises_Model.self) { model in
+      self.tblPromises.dataSource = model ; self.tblPromises.delegate = model
+    }
   }
   
   func willAppearStuff() {
@@ -31,6 +36,19 @@ class ListPromisesViewController: BetterViewController {
 //    btnCancel.layer.cornerRadius = btnCancel.frame.width / 2
     
   }
+  
+  // MARK: -- segue functions
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == Segue.fromListToDetail.rawValue {
+      if let id = sender as? NSManagedObjectID {
+        if let dest = segue.destinationViewController as? PromiseDetailViewController {
+          dest.focusID = id
+        }
+      }
+    }
+  }
+  
+  
   
   // MARK: -- required functions
   override func viewDidLoad() {

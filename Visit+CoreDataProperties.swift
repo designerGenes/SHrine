@@ -15,6 +15,6 @@ import CoreData
 extension Visit {
 
     @NSManaged var date: NSDate?
-    @NSManaged var assocShrine: Shrine?
+    @NSManaged var shrine: NSSet?
 
 }

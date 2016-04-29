@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateNewPromiseViewController: BetterViewController {
+class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate {
   
   // MARK: -- outlets
 
@@ -22,27 +22,24 @@ class CreateNewPromiseViewController: BetterViewController {
   @IBOutlet weak var btnCustomDays: SegmentedButton!
   @IBOutlet weak var viewContainsControlSets: UIView!
   
-
-//  @IBAction func typedInTextField(sender: UITextField) { doHandleTextInput(sender)  }
+  @IBAction func clickedInterval(sender: SegmentedButton) { doClickedInterval(sender) }
   
-  
-
-  
-//  @IBAction func clickedRewardBtn(sender: UIButton) { selectReward(sender.tag) }
   @IBAction func clickedGo(sender: UIButton) { willAskForConsequences(.good) }
   
   
   // MARK: -- variables
   var shrineTitle: String?
+  var selectedReward: Consequence? ; var selectedPunishment: Consequence? ; var selectedInterval: Int? = 7
+
   var consequenceButtons = [UIButton]()
-  
+  var intervalButtons: [UIButton]!
   var screenObjects: [UIView]!
   var nicknameControlSet: [UIView]! ; var intervalControlSet: [UIView]! ; var consequenceControlSet: [[Consequence]]!
   var rewardControlSet = [UIImageView]() ; var punishmentControlSet = [UIImageView]()
   
   var tempConsequences :[MoralCondition:[Consequence]]?
   
-  var selectedReward: Consequence? ; var selectedPunishment: Consequence?
+  var textFieldReturnPosition: CGFloat?
   
 //  var interval: 
   
@@ -64,8 +61,27 @@ class CreateNewPromiseViewController: BetterViewController {
     
   }
   
+  func doClickedInterval(sender: SegmentedButton) {
+    intervalButtons.map { $0.selected = false }
+    sender.selected = true
+    switch sender.tag {
+    case PromiseIntervalTag.oneDay.rawValue: selectedInterval = 1
+    case PromiseIntervalTag.sevenDays.rawValue: selectedInterval = 7
+    case PromiseIntervalTag.thirtyDays.rawValue: selectedInterval = 30
+    case PromiseIntervalTag.customDays.rawValue: askForCustomInterval(sender)
+    default: break
+    }
+  }
+  
+  func askForCustomInterval(sender: SegmentedButton) {
+    let customerIntervalAlert = BetterAlert(title: "Custom Interval", message: MSG_QuestionCustomInterval, hasCancel: true, vc: self, cancelAction: { 
+      sender.selected = false
+      }) { 
+        self.selectedInterval = 5  // NOTE: replace this with a custom alert controller WITH text field
+    }
+  }
+  
   func doHandleTextInput(field: UITextField) {
-    print("Text input")
     if field.text?.characters.count > 0 {
       btnGo.enabled = true
     } else { btnGo.enabled = false   }
@@ -73,14 +89,12 @@ class CreateNewPromiseViewController: BetterViewController {
   
   func doSelectConsequence(sender: UIButton) {
     if selectedReward == nil {  // first pass
-//      print("first Pass")
       self.selectedReward = getAppDelegate().consequences[.good]![sender.tag]
       doRemoveConsequenceButtons()
       wait(GLOBAL_FADE_TIME) {
         self.doAskForConsequences(.bad)
       }
     } else if selectedPunishment == nil {  // second pass
-//      print("second Pass")
       self.selectedPunishment = getAppDelegate().consequences[.bad]![sender.tag]
       doRemoveConsequenceButtons()
       wait(GLOBAL_FADE_TIME) {
@@ -118,7 +132,8 @@ class CreateNewPromiseViewController: BetterViewController {
   
   
   func willAskForConsequences(type: MoralCondition) {
-    //  check text fields and then...
+    txtNickname.resignFirstResponder()  // hacky
+    SAFE(txtNickname.text) { self.shrineTitle = $0 }
     self.view.blur(1, style: .Dark)
     doAskForConsequences(type)
   }
@@ -148,7 +163,6 @@ class CreateNewPromiseViewController: BetterViewController {
         
         self.view.addSubview(btnConsequence)
         self.consequenceButtons.append(btnConsequence)
-        print(self.consequenceButtons.count)
         btnConsequence.fadeIn()
       
       }
@@ -166,18 +180,40 @@ class CreateNewPromiseViewController: BetterViewController {
     }
   }
   
+  // MARK: -- UITextView delegate methods
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    txtNickname.resignFirstResponder()
+    return true
+  }
+  
+  func textFieldDidBeginEditing(textField: UITextField) {
+    self.textFieldReturnPosition = viewContainsControlSets.center.y
+   viewContainsControlSets.slide(.up, distanceAndTime: (distance: 100, time: GLOBAL_FADE_TIME))
+
+  }
+  
+  func textFieldDidEndEditing(textField: UITextField) {
+    SAFE(textFieldReturnPosition) { returnY in
+      let distance: CGFloat = (returnY - self.viewContainsControlSets.center.y)
+      self.viewContainsControlSets.slide(.down, distanceAndTime: (distance: distance, time: GLOBAL_FADE_TIME))
+      print("Editing done")
+    }
+  }
   
   
   // MARK: -- load functions
   func didLoadStuff() {
     model = CreateNew_Model(master: self)
     txtNickname.addTarget(self, action: #selector(CreateNewPromiseViewController.doHandleTextInput(_:)), forControlEvents: UIControlEvents.EditingChanged)
+    intervalButtons = [ btnOneDay, btnSevenDays, btnThirtyDays, btnCustomDays ]
+    txtNickname.autocorrectionType = .No
+    txtNickname.delegate = self
   }
   
   func willAppearStuff() {
     viewContainsControlSets.layer.cornerRadius = 8  // why 8?
     btnGo.enabled = false
-    
+    btnSevenDays.selected = true
   }
   
   func didAppearStuff() {

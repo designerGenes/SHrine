@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 class Shrine: NSManagedObject {
   // MARK: -- variables
@@ -15,7 +16,16 @@ class Shrine: NSManagedObject {
   
   
   // MARK: -- custom functions
+  func setValues(nickname: String, coord: CLLocationCoordinate2D) {
+    self.nickname = nickname
+    self.latitude = coord.latitude ; self.longitude = coord.longitude
+  }
   
+  func addVisit() { // return to this
+    if let visits = self.visits as? [Visit] {
+      
+    }
+  }
   
   
   // MARK: -- required functions

@@ -14,10 +14,10 @@ import CoreData
 
 extension Promise {
 
-    @NSManaged var interval: NSNumber?
-    @NSManaged var reward: String?
-    @NSManaged var punishment: String?
     @NSManaged var dateCreated: NSDate?
-    @NSManaged var assocShrine: Shrine?
+    @NSManaged var interval: NSNumber?
+    @NSManaged var punishment: String?
+    @NSManaged var reward: String?
+    @NSManaged var shrine: Shrine?
 
 }

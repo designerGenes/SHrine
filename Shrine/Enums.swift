@@ -42,6 +42,10 @@ enum MoralCondition {
   case bad
 }
 
+enum CustomCellID: String {
+  case CellPromise = "CellPromise"
+}
+
 enum Consequence: String {
   case good_robot = "robot"
   case good_cake = "cake"
@@ -54,7 +58,12 @@ enum Consequence: String {
 
 
 
-
+enum PromiseIntervalTag: Int {
+  case oneDay = 0
+  case sevenDays = 1
+  case thirtyDays = 2
+  case customDays = 3
+}
 
 
 enum VC: String {

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3EA461A0F558F2D4B1468989'
+               BlueprintIdentifier = 'CAE550AD334687A97FCAE781'
                BlueprintName = 'Pods-Shrine'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Shrine.framework'>

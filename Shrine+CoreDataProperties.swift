@@ -14,10 +14,10 @@ import CoreData
 
 extension Shrine {
 
-    @NSManaged var nickname: String?
     @NSManaged var latitude: NSNumber?
     @NSManaged var longitude: NSNumber?
-    @NSManaged var assocPromise: NSManagedObject?
-    @NSManaged var visit: NSManagedObject?
+    @NSManaged var nickname: String?
+    @NSManaged var promise: Promise?
+    @NSManaged var visits: NSSet?
 
 }

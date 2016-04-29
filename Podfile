@@ -9,5 +9,6 @@ target 'Shrine' do
   pod 'SwiftyJSON'
   pod 'SwiftDateExtension'
   pod 'Former'
+  pod 'SwiftHEXColors'
 end
 
