@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7AC0EB638BD928D8DDC47EF8 /* Pods_Shrine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */; };
+		A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC691CD2B990002B1CDD /* CoreDataBrain.swift */; };
 		A8EDD4961CD1A83E00B171FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4951CD1A83E00B171FE /* AppDelegate.swift */; };
 		A8EDD49B1CD1A83E00B171FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4991CD1A83E00B171FE /* Main.storyboard */; };
 		A8EDD49D1CD1A83E00B171FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD49C1CD1A83E00B171FE /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4CF1CD1A8CA00B171FE /* PromiseDetail_Model.swift */; };
 		A8EDD4E01CD1A8CA00B171FE /* PromiseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4D01CD1A8CA00B171FE /* PromiseDetailViewController.swift */; };
 		A8EDD4E11CD1A8CA00B171FE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4D11CD1A8CA00B171FE /* Protocols.swift */; };
-		A8EDD4E21CD1A8CA00B171FE /* RewardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4D21CD1A8CA00B171FE /* RewardButton.swift */; };
 		A8EDD4E41CD1A8E900B171FE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4E31CD1A8E900B171FE /* Podfile */; };
 		A8EDD4F11CD1A9F600B171FE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4E91CD1A9F600B171FE /* Alamofire.framework */; };
 		A8EDD4F21CD1A9F600B171FE /* ChameleonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EA1CD1A9F600B171FE /* ChameleonFramework.framework */; };
@@ -45,6 +45,14 @@
 		A8EDD5071CD1AA4500B171FE /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */; };
 		A8EDD5081CD1AA4500B171FE /* BetterAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */; };
 		A8EDD50E1CD1E61300B171FE /* CreateNew_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */; };
+		A8EDD5111CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD50F1CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld */; };
+		A8EDD5141CD2913B00B171FE /* Shrine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD5131CD2913B00B171FE /* Shrine.swift */; };
+		A8EDD5161CD291BE00B171FE /* SaveableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD5151CD291BE00B171FE /* SaveableObject.swift */; };
+		A8EDD5191CD2929800B171FE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD5181CD2929800B171FE /* DataController.swift */; };
+		A8EDD51E1CD2962500B171FE /* Shrine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD51A1CD2962500B171FE /* Shrine+CoreDataProperties.swift */; };
+		A8EDD51F1CD2962500B171FE /* Promise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD51B1CD2962500B171FE /* Promise+CoreDataProperties.swift */; };
+		A8EDD5201CD2962500B171FE /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD51C1CD2962500B171FE /* Visit+CoreDataProperties.swift */; };
+		A8EDD5211CD2962500B171FE /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD51D1CD2962500B171FE /* Visit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		A4531958F492130671B663BD /* Pods-Shrine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.release.xcconfig"; sourceTree = "<group>"; };
+		A8C8DC691CD2B990002B1CDD /* CoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataBrain.swift; sourceTree = "<group>"; };
 		A8EDD4921CD1A83E00B171FE /* Shrine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shrine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EDD4951CD1A83E00B171FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8EDD49A1CD1A83E00B171FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +96,6 @@
 		A8EDD4CF1CD1A8CA00B171FE /* PromiseDetail_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseDetail_Model.swift; sourceTree = "<group>"; };
 		A8EDD4D01CD1A8CA00B171FE /* PromiseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseDetailViewController.swift; sourceTree = "<group>"; };
 		A8EDD4D11CD1A8CA00B171FE /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		A8EDD4D21CD1A8CA00B171FE /* RewardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardButton.swift; sourceTree = "<group>"; };
 		A8EDD4E31CD1A8E900B171FE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8EDD4E91CD1A9F600B171FE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		A8EDD4EA1CD1A9F600B171FE /* ChameleonFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChameleonFramework.framework; path = "Pods/../build/Debug-iphoneos/ChameleonFramework.framework"; sourceTree = "<group>"; };
@@ -106,6 +114,14 @@
 		A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Randomizer.swift; path = "../REUSABLE FILES/Randomizer.swift"; sourceTree = SOURCE_ROOT; };
 		A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BetterAlert.swift; path = "../REUSABLE FILES/BetterAlert.swift"; sourceTree = SOURCE_ROOT; };
 		A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNew_Model.swift; sourceTree = "<group>"; };
+		A8EDD5101CD28BB500B171FE /* ShrineDB_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model.xcdatamodel; sourceTree = "<group>"; };
+		A8EDD5131CD2913B00B171FE /* Shrine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shrine.swift; sourceTree = "<group>"; };
+		A8EDD5151CD291BE00B171FE /* SaveableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveableObject.swift; sourceTree = "<group>"; };
+		A8EDD5181CD2929800B171FE /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A8EDD51A1CD2962500B171FE /* Shrine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shrine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8EDD51B1CD2962500B171FE /* Promise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8EDD51C1CD2962500B171FE /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8EDD51D1CD2962500B171FE /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		ABCAB3AA2D1085385DF09976 /* Pods-Shrine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.debug.xcconfig"; sourceTree = "<group>"; };
 		BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shrine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,10 +195,11 @@
 			children = (
 				A8EDD4951CD1A83E00B171FE /* AppDelegate.swift */,
 				A8EDD49C1CD1A83E00B171FE /* Assets.xcassets */,
+				A8EDD5121CD28BC100B171FE /* DataModels */,
 				A8EDD4E61CD1A91600B171FE /* Extensions */,
 				A8EDD4C91CD1A8CA00B171FE /* Info.plist */,
-				A8EDD4E81CD1A95A00B171FE /* Storyboards */,
 				A8EDD4E71CD1A92700B171FE /* Objects */,
+				A8EDD4E81CD1A95A00B171FE /* Storyboards */,
 				A8EDD4E51CD1A90400B171FE /* ViewControllers */,
 			);
 			path = Shrine;
@@ -206,6 +223,7 @@
 				A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */,
 				A8EDD4FA1CD1AA4500B171FE /* BetterViewController.swift */,
 				A8EDD4C31CD1A8CA00B171FE /* Constants.swift */,
+				A8EDD5181CD2929800B171FE /* DataController.swift */,
 				A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */,
 				A8EDD4C71CD1A8CA00B171FE /* Enums.swift */,
 				A8EDD4F91CD1AA4500B171FE /* extensions.swift */,
@@ -221,9 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				A8EDD4C41CD1A8CA00B171FE /* SegmentedButton.swift */,
+				A8C8DC691CD2B990002B1CDD /* CoreDataBrain.swift */,
 				A8EDD4C81CD1A8CA00B171FE /* GPSBrain.swift */,
-				A8EDD4CE1CD1A8CA00B171FE /* Promise.swift */,
-				A8EDD4D21CD1A8CA00B171FE /* RewardButton.swift */,
+				A8EDD5171CD291D800B171FE /* Saveables */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -271,6 +289,52 @@
 				A8EDD50D1CD1E61300B171FE /* CreateNew_Model.swift */,
 			);
 			name = CreateNewPromises;
+			sourceTree = "<group>";
+		};
+		A8EDD5121CD28BC100B171FE /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD50F1CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		A8EDD5171CD291D800B171FE /* Saveables */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD5231CD2966900B171FE /* Promise */,
+				A8EDD5151CD291BE00B171FE /* SaveableObject.swift */,
+				A8EDD5221CD2966100B171FE /* Shrine */,
+				A8EDD5241CD2967000B171FE /* Visit */,
+			);
+			name = Saveables;
+			sourceTree = "<group>";
+		};
+		A8EDD5221CD2966100B171FE /* Shrine */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD51A1CD2962500B171FE /* Shrine+CoreDataProperties.swift */,
+				A8EDD5131CD2913B00B171FE /* Shrine.swift */,
+			);
+			name = Shrine;
+			sourceTree = "<group>";
+		};
+		A8EDD5231CD2966900B171FE /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD51B1CD2962500B171FE /* Promise+CoreDataProperties.swift */,
+				A8EDD4CE1CD1A8CA00B171FE /* Promise.swift */,
+			);
+			name = Promise;
+			sourceTree = "<group>";
+		};
+		A8EDD5241CD2967000B171FE /* Visit */ = {
+			isa = PBXGroup;
+			children = (
+				A8EDD51C1CD2962500B171FE /* Visit+CoreDataProperties.swift */,
+				A8EDD51D1CD2962500B171FE /* Visit.swift */,
+			);
+			name = Visit;
 			sourceTree = "<group>";
 		};
 		E2A1D7AFA83B0EC19756F69A /* Frameworks */ = {
@@ -474,12 +538,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8EDD5111CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld in Sources */,
 				A8EDD4E11CD1A8CA00B171FE /* Protocols.swift in Sources */,
+				A8EDD5201CD2962500B171FE /* Visit+CoreDataProperties.swift in Sources */,
 				A8EDD4DC1CD1A8CA00B171FE /* Main_Model.swift in Sources */,
 				A8EDD4DD1CD1A8CA00B171FE /* MainViewController.swift in Sources */,
 				A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */,
 				A8EDD5021CD1AA4500B171FE /* BetterViewController.swift in Sources */,
+				A8EDD51F1CD2962500B171FE /* Promise+CoreDataProperties.swift in Sources */,
 				A8EDD4DA1CD1A8CA00B171FE /* ListPromises_Model.swift in Sources */,
+				A8EDD5161CD291BE00B171FE /* SaveableObject.swift in Sources */,
 				A8EDD50E1CD1E61300B171FE /* CreateNew_Model.swift in Sources */,
 				A8EDD5081CD1AA4500B171FE /* BetterAlert.swift in Sources */,
 				A8EDD5061CD1AA4500B171FE /* Dispatch.swift in Sources */,
@@ -491,12 +559,16 @@
 				A8EDD4D31CD1A8CA00B171FE /* Constants.swift in Sources */,
 				A8EDD4D71CD1A8CA00B171FE /* Enums.swift in Sources */,
 				A8EDD5041CD1AA4500B171FE /* Safe.swift in Sources */,
+				A8EDD5211CD2962500B171FE /* Visit.swift in Sources */,
 				A8EDD5011CD1AA4500B171FE /* extensions.swift in Sources */,
 				A8EDD5071CD1AA4500B171FE /* Randomizer.swift in Sources */,
+				A8EDD5191CD2929800B171FE /* DataController.swift in Sources */,
 				A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift in Sources */,
 				A8EDD5031CD1AA4500B171FE /* AnimationsLibrary.swift in Sources */,
+				A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */,
 				A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */,
-				A8EDD4E21CD1A8CA00B171FE /* RewardButton.swift in Sources */,
+				A8EDD5141CD2913B00B171FE /* Shrine.swift in Sources */,
+				A8EDD51E1CD2962500B171FE /* Shrine+CoreDataProperties.swift in Sources */,
 				A8EDD4DE1CD1A8CA00B171FE /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +829,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8EDD50F1CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8EDD5101CD28BB500B171FE /* ShrineDB_Model.xcdatamodel */,
+			);
+			currentVersion = A8EDD5101CD28BB500B171FE /* ShrineDB_Model.xcdatamodel */;
+			path = ShrineDB_Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A8EDD48A1CD1A83E00B171FE /* Project object */;
 }

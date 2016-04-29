@@ -58,7 +58,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="typedInNickname:" destination="UI2-TJ-gfQ" eventType="editingDidEnd" id="yHM-Ju-aIo"/>
+                                            <action selector="typedInTextField:" destination="UI2-TJ-gfQ" eventType="valueChanged" id="HiN-jO-dng"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-p2-bEa">
@@ -164,6 +164,7 @@
                         <outlet property="lblNickname" destination="G4j-S7-Flr" id="Iaq-eJ-AN3"/>
                         <outlet property="txtNickname" destination="wQZ-Eb-deW" id="Ahf-6W-1uh"/>
                         <outlet property="viewContainsControlSets" destination="tVZ-Dr-520" id="BF6-q7-yy7"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="fromCreateToMain" id="UTI-A7-KCr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yi-on-R9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218.5" y="325.5"/>
+            <point key="canvasLocation" x="-337.5" y="407.5"/>
         </scene>
         <!--List Promises View Controller-->
         <scene sceneID="3M3-yv-1oM">
@@ -424,7 +425,7 @@
         <image name="customDays_on" width="86" height="86"/>
         <image name="imgShrine" width="167" height="167"/>
         <image name="oneDay_off" width="86" height="86"/>
-        <image name="oneDay_on" width="86" height="86"/>
+        <image name="oneDay_on" width="85" height="86"/>
         <image name="pin_up" width="183" height="183"/>
         <image name="sevenDays_off" width="86" height="86"/>
         <image name="sevenDays_on" width="86" height="86"/>

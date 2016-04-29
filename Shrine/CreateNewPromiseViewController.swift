@@ -23,7 +23,8 @@ class CreateNewPromiseViewController: BetterViewController {
   @IBOutlet weak var viewContainsControlSets: UIView!
   
 
-  @IBAction func typedInNickname(sender: UITextField) {  }
+//  @IBAction func typedInTextField(sender: UITextField) { doHandleTextInput(sender)  }
+  
   
 
   
@@ -60,53 +61,59 @@ class CreateNewPromiseViewController: BetterViewController {
     intervalControlSet = [
       btnOneDay, btnSevenDays, btnThirtyDays, btnCustomDays
     ]
-//    consequenceControlSet = [rewardControlSet, punishmentControlSet]()  // docile and sleepy for now
     
-//    tempConsequences = getAppDelegate().consequences
-    
-    // commands
-//    screenObjects.map { $0.translatesAutoresizingMaskIntoConstraints = false }
-//
-//    txtNickname.translatesAutoresizingMaskIntoConstraints = false
-//    txtNickname.frame = CGRectMake(0, 0, 330, 330)
-    
-//    nicknameControlSet.map { $0.backgroundColor = UIColor.redColor() }
-//    intervalControlSet.map { $0.center.y = self.frame.height * 2 }
-    
-    
-    
+  }
+  
+  func doHandleTextInput(field: UITextField) {
+    print("Text input")
+    if field.text?.characters.count > 0 {
+      btnGo.enabled = true
+    } else { btnGo.enabled = false   }
   }
   
   func doSelectConsequence(sender: UIButton) {
     if selectedReward == nil {  // first pass
-      print("first Pass")
+//      print("first Pass")
       self.selectedReward = getAppDelegate().consequences[.good]![sender.tag]
       doRemoveConsequenceButtons()
-      doAskForConsequences(.bad)
+      wait(GLOBAL_FADE_TIME) {
+        self.doAskForConsequences(.bad)
+      }
     } else if selectedPunishment == nil {  // second pass
-      print("secondPass")
-      self.view.unBlur()
+//      print("second Pass")
       self.selectedPunishment = getAppDelegate().consequences[.bad]![sender.tag]
       doRemoveConsequenceButtons()
-      
-      doAskToFinalize()
+      wait(GLOBAL_FADE_TIME) {
+        self.view.unBlur()
+        self.doAskToFinalize()
+      }
       
     }
     
   }
   
   func doRemoveConsequenceButtons() {
-    consequenceButtons.map { button in
-      let button = button as! UIButton
+    (0..<consequenceButtons.count).map { count in
+      let time = GLOBAL_FADE_TIME + NSTimeInterval(Double(count) * 0.1)
+      let button = consequenceButtons[count]
       // this will be fancier later
-     animateThen(GLOBAL_FADE_TIME, animations: { 
-      button.alpha = 0
-      }, completion: {  button.removeFromSuperview() })
+      button.slide(.down, distanceAndTime: (self.view.frame.height, time)) {
+        button.removeFromSuperview()
+      }
     }
   }
   
   func doAskToFinalize() {
     PF("doAskToFinalize")
+    
+    let questionAlert = BetterAlert(title: "Finalize?", message: MSG_QuestionFinalizePromise, hasCancel: true, vc: self, cancelAction:  {
+      self.performSegueWithIdentifier(Segue.fromCreateToMain.rawValue, sender: nil)
+    }, okAction: {
+      SAFECAST(self.model, type: CreateNew_Model.self) { model in
+        model.doCreateNewDataObjects()
+      }
+    })
+    
   }
   
   
@@ -117,10 +124,9 @@ class CreateNewPromiseViewController: BetterViewController {
   }
   
   func doAskForConsequences(type: MoralCondition) {
-    print("Asking for consequences")
+//    print("Asking for consequences")
     if let set = getAppDelegate().consequences[type] {
       self.consequenceButtons.removeAll()
-      print(set.count)
       (0..<set.count).map { count in
         let safeWidth = self.view.frame.width / CGFloat(set.count); let safeHeight = safeWidth // duh
         let frame = CGRectMake(0, 0, safeWidth, safeWidth)
@@ -129,81 +135,32 @@ class CreateNewPromiseViewController: BetterViewController {
         btnConsequence.userInteractionEnabled = true
         btnConsequence.tag = count
         btnConsequence.alpha = 0
-        
         if count % 2 == 0 || count == 0 {  // even button
-          
           btnConsequence.center.y = self.view.center.y - safeHeight + (safeHeight * CGFloat(Int(count/2))*1.2)
           btnConsequence.center.x = self.view.center.x - (safeWidth/2)*1.2
         } else {            // odd button
           btnConsequence.center.y = self.view.center.y - safeHeight + (safeHeight * CGFloat(Int(count-1/2))*1.2)
           btnConsequence.center.x = self.view.center.x + (safeWidth/2)*1.2
         }
+        if count == 0 { btnConsequence.center.x = self.view.center.x }
+        
         btnConsequence.addTarget(self, action: #selector(self.doSelectConsequence(_:)), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(btnConsequence)
         self.consequenceButtons.append(btnConsequence)
+        print(self.consequenceButtons.count)
         btnConsequence.fadeIn()
-//        btnConsequence.center.y = self.view.center.y
-//        btnConsequence.center.x = (safeWidth/2) + (CGFloat(count) * safeWidth) - self.view.frame.width
       
+      }
+    
     }
-    
   }
   
-  
-  func displayChoices() {
-//    if selectedReward == nil { createChoicesButtons(rewards.map({$0.rawValue})) }
-//    else { createChoicesButtons(punishments.map({$0.rawValue})) }
-    
-
-    
-  }
-  
-  func createChoicesButtons(choices: [String]) {
-//    if buttons.count > 0 {     //    clear screen just in case
-//      buttons.map { SV in SV.slide(.right) { SV.removeFromSuperview() } }
-//    }
-    
-    
-//    (0..<choices.count).map { count in
-//      SAFE(self.superview) { SV in
-////        let timer = Double(count) * (GLOBAL_FADE_TIME * 0.8)
-//        let VCW = self.viewContainsRewards
-//        let outButton = UIButton(frame: CGRectMake(CGPointZero.x, CGPointZero.y, (VCW.bounds.width / 3 ) * 0.5, (VCW.bounds.width / 3 ) * 0.5))
-//        self.viewContainsRewards.addSubview(outButton)
-//        outButton.tag = count
-//        outButton.setBackgroundImage(UIImage(named: choices[count]), forState: .Normal)
-//        outButton.setBackgroundImage(UIImage(named: "robot")!, forState: .Highlighted)
-//        outButton.userInteractionEnabled = true
-//        outButton.enabled = true
-//        outButton.addTarget(self, action: #selector(self.didMakeChoice(_:)), forControlEvents: .TouchUpInside)
-//        
-//        print("Center Y of master is \(VCW.center.y)")
-//        outButton.center.y = VCW.bounds.height / 2
-//        outButton.center.x = (((VCW.bounds.width * 0.75) / 3) * CGFloat(count)) + outButton.frame.width/2 - VCW.bounds.width
-//        outButton.slide(.right)
-//        self.buttons.append(outButton)
-//      }
-//    }
-  }
-//  
-//  func didMakeChoice(sender: UIButton) {
-//    print("OH Lawd")
-//    if selectedReward == nil { selectedReward = rewards[sender.tag] }
-//    else { selectedPunishment = punishments[sender.tag] }
-//    
-//    if (selectedReward == nil) || (selectedPunishment == nil) {
-//      displayChoices()
-//    } else {
-//      
-//    }
-//  }
-  }
   
   
   func doSubmitShrine() {
     SAFE(self.view.superview) { $0.unBlur() }
-    self.view.slide(.up, distance: nil) {  // if distance is nil, slide across entire screen
+    self.view.slide(.up, distanceAndTime: nil) {  // if distance is nil, slide across entire screen
       self.view.subviews.map { $0.removeFromSuperview() }
       self.view.removeFromSuperview()
     }
@@ -214,10 +171,12 @@ class CreateNewPromiseViewController: BetterViewController {
   // MARK: -- load functions
   func didLoadStuff() {
     model = CreateNew_Model(master: self)
+    txtNickname.addTarget(self, action: #selector(CreateNewPromiseViewController.doHandleTextInput(_:)), forControlEvents: UIControlEvents.EditingChanged)
   }
   
   func willAppearStuff() {
     viewContainsControlSets.layer.cornerRadius = 8  // why 8?
+    btnGo.enabled = false
     
   }
   

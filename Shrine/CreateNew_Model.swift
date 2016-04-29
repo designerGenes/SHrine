@@ -11,16 +11,21 @@ import UIKit
 
 
 class CreateNew_Model: ViewModel {
-// MARK: -- variables
+  // MARK: -- variables
 
 
-// MARK: -- custom functions
-func doWasCreated() {
+  // MARK: -- custom functions
+  func doCreateNewDataObjects() {
+    
+  }
   
-}
+  
+  func doWasCreated() {
+    
+  }
 
 
-// MARK: -- required functions
-init(master: CreateNewPromiseViewController) { super.init(_master: master) ; doWasCreated() }
+  // MARK: -- required functions
+  init(master: CreateNewPromiseViewController) { super.init(_master: master) ; doWasCreated() }
 
 } // end of model class

@@ -10,3 +10,6 @@ import Foundation
 
 let GLOBAL_FADE_TIME: NSTimeInterval = 0.75
 let MAX_CONSEQUENCES = 3
+
+// MARK: -- dialogues and alerts
+let MSG_QuestionFinalizePromise = "You are are about to finalize this Promise.  Click YES to make this promise or CANCEL to return home."

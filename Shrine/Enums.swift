@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum Core_ObjTitle: String {
+  case shrine = "Shrine"
+  case visit = "Visit"
+  case promise = "Promise"
+}
+
 
 enum ShrineAccuracy: Double {
   case small = 1.1
@@ -63,4 +69,5 @@ enum Segue: String {
   case fromMainToList = "fromMainToList"
   case fromListToDetail = "fromListToDetail"
   case fromMainToCreate = "fromMainToCreate"
+  case fromCreateToMain = "fromCreateToMain"  // this cannot be good code
 }

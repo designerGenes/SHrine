@@ -8,26 +8,18 @@
 
 import Foundation
 import CoreLocation
+import CoreData
 // worry about coredata later
 
 
-struct Shrine {
-  var GPSCoord: CLLocationCoordinate2D
-  var ZoneSize: CLLocationAccuracy
-  var lastVisited: NSDate?
-} // end of Shrine
-
-// // // // // // // //  // // // // // // // //
-
-
-class Promise: NSObject {
+class Promise: NSManagedObject {
   // MARK: -- variables
-  var locationNickname: String?
-  var assocShrine: Shrine?
-  var reasonWhy: String?
-  var penaltyIfChainBroken: String?  // change this later
-  var rewardInterval: Int?
-  
+//  var locationNickname: String?
+//  var assocShrine: Shrine?
+//  var reasonWhy: String?
+//  var penaltyIfChainBroken: String?  // change this later
+//  var rewardInterval: Int?
+//  
   
   // MARK: -- custom functions
   func doWasCreated() {
@@ -44,10 +36,11 @@ class Promise: NSObject {
   
   
   // MARK: -- required functions
-  init(nickname: String, assocShrine: Shrine) {
-    self.locationNickname = nickname ; self.assocShrine = assocShrine
-    super.init()
-    doWasCreated()
-  }
+//  init(nickname: String, assocShrine: Shrine) {
+////    self.locationNickname = nickname ; self.assocShrine = assocShrine
+////    super.init()
+//    
+////    doWasCreated()
+//  }
   
 } // end of custom class

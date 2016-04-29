@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 import MapKit
 
 @UIApplicationMain
@@ -16,23 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   var GPS_Brain: GPSBrain!
+  var CoreData_Brain: CoreDataBrain!
   var bundle: NSBundle!
-  let GENERIC_ERROR = "Oh lawd Jesus it's on fire!"
+  let GENERIC_ERROR = "Oh lawd Jesus it's a fire!"
   var currentDominantVC: BetterViewController?
   var mapView: MKMapView?
   var storyboard: UIStoryboard!
   var consequences: moralConsequenceHash!
+  var dataController: DataController!  // what is this?
+  
+
 
   
   // MARK: -- appDelegate functions
+  func getAppDelegate() -> AppDelegate {
+    return UIApplication.sharedApplication().delegate as! AppDelegate
+  }
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
   
     GPS_Brain = GPSBrain()
+    CoreData_Brain = CoreDataBrain()
     UIApplication.sharedApplication().statusBarStyle = .LightContent
     bundle = NSBundle(forClass: self.dynamicType)
     storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    dataController = DataController()
     
     consequences = [
       .good: [.good_robot, .good_cake, .good_goblet],
@@ -66,6 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+  
+  
 
 }
 
