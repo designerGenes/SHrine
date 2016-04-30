@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 import CoreData
 import MapKit
+import ChameleonFramework
+import SwiftHEXColors
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
   
+    
+    
+    
+    
+    
     GPS_Brain = GPSBrain()
     CoreData_Brain = CoreDataBrain()
     UIApplication.sharedApplication().statusBarStyle = .LightContent

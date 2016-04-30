@@ -13,14 +13,35 @@ import Former
 class PromiseDetailViewController: BetterViewController {
   // MARK: -- outlets
   
+  @IBOutlet weak var viewTopZone: UIView!
   @IBOutlet weak var tblPromiseDetails: UITableView!
   @IBOutlet weak var viewContainsChain: UIView!
+  @IBOutlet weak var viewContainsTableAndChain: UIView!
+  @IBOutlet weak var viewBottomZone: UIView!
+  @IBOutlet weak var lblShrineNickname: UILabel!
+  
+
+  @IBOutlet weak var btnDelete: UIButton!
+  @IBOutlet weak var btnUnwind: UIButton!
+
+  @IBAction func clickedDelete(sender: UIButton) { doClickedDelete(sender) }
+  
+  
   
   // MARK: -- variables
   var focusID: NSManagedObjectID!
   var former: Former!
   
   // MARK: -- custom functions
+  func doClickedIAmHere(sender: UIButton) {
+    
+  }
+  
+  func doClickedDelete(sender: UIButton) {
+    
+  }
+  
+  
   func didLoadStuff() {
     former = Former(tableView: tblPromiseDetails)
     model = PromiseDetail_Model(master: self, id: focusID)

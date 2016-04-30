@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,17 +19,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftDateExtension.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftHEXColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SwiftMoment.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,22 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>076CE8DBCE917D920D125DEA48DB2098</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2498A2B00F2CF0B5C9FBD5C3A0296B1B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2A22FA80EDE9F9C538A729B301978CA9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F172E7DB310C56A1FFE9D9988199708</key>
+		<key>0AC2FDE3D51AD8FD516DB6870DDF3BBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>980933AEBFB68262FC5D0C757539CEE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>980933AEBFB68262FC5D0C757539CEE4</key>
+		<key>F75008CDC06BA2BC974500C98795A757</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB2DCB0E64782E4A976BCA2C0C897952</key>
 		<dict>
 			<key>primary</key>
 			<true/>

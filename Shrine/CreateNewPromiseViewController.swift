@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHEXColors
 
 class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate {
   
@@ -28,10 +29,13 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   
   
   // MARK: -- variables
+  static var previousColor: UIColor?
+  
   var shrineTitle: String?
+  var shrineColor: String!
   var selectedReward: Consequence? ; var selectedPunishment: Consequence? ; var selectedInterval: Int? = 7
 
-  var consequenceButtons = [UIButton]()
+  var consequenceButtons = [UIView]()
   var intervalButtons: [UIButton]!
   var screenObjects: [UIView]!
   var nicknameControlSet: [UIView]! ; var intervalControlSet: [UIView]! ; var consequenceControlSet: [[Consequence]]!
@@ -41,7 +45,13 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   
   var textFieldReturnPosition: CGFloat?
   
-//  var interval: 
+  let colorChoices: [UIColor] = [
+    colors[projColor.blue_bright.rawValue]!,
+    colors[projColor.red_bright.rawValue]!,
+    colors[projColor.yellow_bright.rawValue]!,
+    colors[projColor.green_bright.rawValue]!,
+    ]
+  
   
   // MARK: -- animation functions
     
@@ -74,7 +84,7 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   }
   
   func askForCustomInterval(sender: SegmentedButton) {
-    let customerIntervalAlert = BetterAlert(title: "Custom Interval", message: MSG_QuestionCustomInterval, hasCancel: true, vc: self, cancelAction: { 
+    let customerIntervalAlert = BetterAlert(title: "Custom Interval", message: STR_QuestionCustomInterval, hasCancel: true, vc: self, cancelAction: {
       sender.selected = false
       }) { 
         self.selectedInterval = 5  // NOTE: replace this with a custom alert controller WITH text field
@@ -110,9 +120,17 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
     (0..<consequenceButtons.count).map { count in
       let time = GLOBAL_FADE_TIME + NSTimeInterval(Double(count) * 0.1)
       let button = consequenceButtons[count]
-      // this will be fancier later
-      button.slide(.down, distanceAndTime: (self.view.frame.height, time)) {
-        button.removeFromSuperview()
+      
+      if button is UILabel {
+        animateThen(GLOBAL_FADE_TIME, animations: { 
+          button.alpha = 0
+          }, completion: { 
+            button.removeFromSuperview()
+        })
+      } else {
+        button.slide(.down, distanceAndTime: (self.view.frame.height, time)) {
+          button.removeFromSuperview()
+        }
       }
     }
   }
@@ -120,7 +138,7 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   func doAskToFinalize() {
     PF("doAskToFinalize")
     
-    let questionAlert = BetterAlert(title: "Finalize?", message: MSG_QuestionFinalizePromise, hasCancel: true, vc: self, cancelAction:  {
+    let questionAlert = BetterAlert(title: "Finalize?", message: STR_QuestionFinalizePromise, hasCancel: true, vc: self, cancelAction:  {
       self.performSegueWithIdentifier(Segue.fromCreateToMain.rawValue, sender: nil)
     }, okAction: {
       SAFECAST(self.model, type: CreateNew_Model.self) { model in
@@ -139,8 +157,20 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   }
   
   func doAskForConsequences(type: MoralCondition) {
-//    print("Asking for consequences")
     if let set = getAppDelegate().consequences[type] {
+      
+      // step 1: create label
+      
+      let lblConsequence = UILabel()
+      lblConsequence.textAlignment = .Center; lblConsequence.frame.size = CGSize(width: view.widthWithMargins(), height: view.frame.height * 0.3)
+      lblConsequence.numberOfLines = 0
+      lblConsequence.lineBreakMode = NSLineBreakMode.ByWordWrapping
+      lblConsequence.text = "Choose \({type == .good ? STR_ChooseReward : STR_ChoosePunishment }())"
+      lblConsequence.textColor = UIColor.flatWhiteColor()
+      lblConsequence.alpha = 0
+    
+    
+      // step 2: display consequence buttons
       self.consequenceButtons.removeAll()
       (0..<set.count).map { count in
         let safeWidth = self.view.frame.width / CGFloat(set.count); let safeHeight = safeWidth // duh
@@ -166,11 +196,26 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
         btnConsequence.fadeIn()
       
       }
+      
+      // step 3: fade in label and position above buttons
+      SAFE(self.consequenceButtons.first) { firstBtn in
+        self.view.addSubview(lblConsequence)
+        lblConsequence.center = CGPointMake(self.view.center.x, (firstBtn[0].y-lblConsequence.frame.height/3))
+        lblConsequence.fadeIn()
+        self.consequenceButtons.append(lblConsequence)
+        
+      }
     
     }
   }
   
-  
+  func generateRandomColor() -> UIColor {
+    let out = colorChoices[rollDice(colorChoices.count)]
+    if let previousColor = CreateNewPromiseViewController.previousColor {
+      if out == previousColor { return generateRandomColor() }
+    }
+    return out
+  }
   
   func doSubmitShrine() {
     SAFE(self.view.superview) { $0.unBlur() }
@@ -214,13 +259,26 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
     viewContainsControlSets.layer.cornerRadius = 8  // why 8?
     btnGo.enabled = false
     btnSevenDays.selected = true
+    
+  
+   
+    
+    
+    let uniqueColor = self.generateRandomColor()
+    CreateNewPromiseViewController.previousColor = uniqueColor
+    view.backgroundColor = uniqueColor
+    shrineColor = uniqueColor.hexValue()
+    
+    
   }
+  
   
   func didAppearStuff() {
   }
   
   // MARK: -- required functions
   override func viewDidLoad() {
+    
     didLoadStuff()
     super.viewDidLoad()
   }

@@ -73,6 +73,27 @@ class GPSBrain: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
   
   
   // MARK: -- custom functions
+  func getCityFromCoordinate(coord: CLLocationCoordinate2D) -> String {
+    var out = "" ; // let geoCoder = CLGeocoder()
+//    let queue = dispatch_group_create()
+//    dispatch_group_enter(queue)
+//    dispatchToBackground {
+//      let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
+//      geoCoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void in
+//        SAFE(placemarks?.first) { place in
+//          if let city = place.addressDictionary!["City"] as? String {
+//            out = city
+//            dispatchToMain { dispatch_group_leave(queue) } // I think this will lock up
+//          }
+//        }
+//      }
+//    }
+//    dispatch_group_wait(queue, DISPATCH_TIME_FOREVER)
+//    print("Found city and it is \(out)")
+    return out
+  }
+  
+  
   func checkCLPermission() {
     PF("checkCLPermission")
     switch CLLocationManager.authorizationStatus() {

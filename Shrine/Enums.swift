@@ -79,4 +79,5 @@ enum Segue: String {
   case fromListToDetail = "fromListToDetail"
   case fromMainToCreate = "fromMainToCreate"
   case fromCreateToMain = "fromCreateToMain"  // this cannot be good code
+  case unwindDetailToList = "unwindDetailToList"
 }

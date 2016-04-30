@@ -1,6 +1,0 @@
-framework module SwiftDateExtension {
-  umbrella header "SwiftDateExtension-umbrella.h"
-
-  export *
-  module * { export * }
-}

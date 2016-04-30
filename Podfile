@@ -5,10 +5,8 @@ use_frameworks!
 
 target 'Shrine' do
   pod 'ChameleonFramework/Swift'
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'SwiftDateExtension'
   pod 'Former'
   pod 'SwiftHEXColors'
+  pod 'SwiftMoment'
 end
 

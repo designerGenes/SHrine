@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7AC0EB638BD928D8DDC47EF8 /* Pods_Shrine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */; };
+		A8C1E4B41CD4006800EFFE35 /* Shrine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B31CD4006800EFFE35 /* Shrine+CoreDataProperties.swift */; };
+		A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B51CD400F700EFFE35 /* Promise+CoreDataProperties.swift */; };
+		A8C1E4B81CD4015F00EFFE35 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B71CD4015F00EFFE35 /* Visit+CoreDataProperties.swift */; };
+		A8C1E4BA1CD4071F00EFFE35 /* SwiftMoment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C1E4B91CD4071F00EFFE35 /* SwiftMoment.framework */; };
+		A8C1E4BC1CD4100600EFFE35 /* Constants_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4BB1CD4100600EFFE35 /* Constants_Colors.swift */; };
 		A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC691CD2B990002B1CDD /* CoreDataBrain.swift */; };
-		A8C8DC801CD2F23B002B1CDD /* Promise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC7F1CD2F23B002B1CDD /* Promise+CoreDataProperties.swift */; };
-		A8C8DC821CD2F24F002B1CDD /* Shrine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC811CD2F24F002B1CDD /* Shrine+CoreDataProperties.swift */; };
-		A8C8DC841CD2F259002B1CDD /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC831CD2F259002B1CDD /* Visit+CoreDataProperties.swift */; };
 		A8C8DC861CD2FABC002B1CDD /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C8DC851CD2FABC002B1CDD /* SwiftHEXColors.framework */; };
 		A8C8DC881CD2FE34002B1CDD /* PromiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8DC871CD2FE34002B1CDD /* PromiseTableViewCell.swift */; };
 		A8EDD4961CD1A83E00B171FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4951CD1A83E00B171FE /* AppDelegate.swift */; };
@@ -32,11 +34,8 @@
 		A8EDD4E01CD1A8CA00B171FE /* PromiseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4D01CD1A8CA00B171FE /* PromiseDetailViewController.swift */; };
 		A8EDD4E11CD1A8CA00B171FE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EDD4D11CD1A8CA00B171FE /* Protocols.swift */; };
 		A8EDD4E41CD1A8E900B171FE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A8EDD4E31CD1A8E900B171FE /* Podfile */; };
-		A8EDD4F11CD1A9F600B171FE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4E91CD1A9F600B171FE /* Alamofire.framework */; };
 		A8EDD4F21CD1A9F600B171FE /* ChameleonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EA1CD1A9F600B171FE /* ChameleonFramework.framework */; };
 		A8EDD4F31CD1A9F600B171FE /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EB1CD1A9F600B171FE /* Former.framework */; };
-		A8EDD4F41CD1A9F600B171FE /* SwiftDateExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EC1CD1A9F600B171FE /* SwiftDateExtension.framework */; };
-		A8EDD4F51CD1A9F600B171FE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4ED1CD1A9F600B171FE /* SwiftyJSON.framework */; };
 		A8EDD4F61CD1A9F600B171FE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EE1CD1A9F600B171FE /* CoreData.framework */; };
 		A8EDD4F71CD1A9F600B171FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4EF1CD1A9F600B171FE /* CoreLocation.framework */; };
 		A8EDD4F81CD1A9F600B171FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EDD4F01CD1A9F600B171FE /* MapKit.framework */; };
@@ -75,11 +74,17 @@
 
 /* Begin PBXFileReference section */
 		A4531958F492130671B663BD /* Pods-Shrine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.release.xcconfig"; sourceTree = "<group>"; };
+		A88991431CD4443E007B5BB9 /* ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel; sourceTree = "<group>"; };
+		A89226351CD41BD5009B89C3 /* ShrineDB_Model_addedPromiseColors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedPromiseColors.xcdatamodel; sourceTree = "<group>"; };
+		A8C1E4B11CD3FBA600EFFE35 /* ShrineDB_Model_addedOriginCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedOriginCity.xcdatamodel; sourceTree = "<group>"; };
+		A8C1E4B21CD4001400EFFE35 /* ShrineDB_Model_removedOptionals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_removedOptionals.xcdatamodel; sourceTree = "<group>"; };
+		A8C1E4B31CD4006800EFFE35 /* Shrine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shrine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C1E4B51CD400F700EFFE35 /* Promise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C1E4B71CD4015F00EFFE35 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C1E4B91CD4071F00EFFE35 /* SwiftMoment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMoment.framework; path = "../../../Library/Developer/Xcode/DerivedData/Shrine-cqtxzfjzxflbxtbsyrnmwuooaknk/Build/Products/Debug-iphonesimulator/SwiftMoment.framework"; sourceTree = "<group>"; };
+		A8C1E4BB1CD4100600EFFE35 /* Constants_Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants_Colors.swift; sourceTree = "<group>"; };
 		A8C8DC691CD2B990002B1CDD /* CoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataBrain.swift; sourceTree = "<group>"; };
 		A8C8DC7E1CD2F208002B1CDD /* ShrineDB_Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ShrineDB_Model 2.xcdatamodel"; sourceTree = "<group>"; };
-		A8C8DC7F1CD2F23B002B1CDD /* Promise+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Promise+CoreDataProperties.swift"; path = "../Promise+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8C8DC811CD2F24F002B1CDD /* Shrine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Shrine+CoreDataProperties.swift"; path = "../Shrine+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8C8DC831CD2F259002B1CDD /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Visit+CoreDataProperties.swift"; path = "../Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8C8DC851CD2FABC002B1CDD /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = "../../../Library/Developer/Xcode/DerivedData/Shrine-cqtxzfjzxflbxtbsyrnmwuooaknk/Build/Products/Debug-iphonesimulator/SwiftHEXColors.framework"; sourceTree = "<group>"; };
 		A8C8DC871CD2FE34002B1CDD /* PromiseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseTableViewCell.swift; sourceTree = "<group>"; };
 		A8EDD4921CD1A83E00B171FE /* Shrine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shrine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,12 +139,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C1E4BA1CD4071F00EFFE35 /* SwiftMoment.framework in Frameworks */,
 				A8C8DC861CD2FABC002B1CDD /* SwiftHEXColors.framework in Frameworks */,
-				A8EDD4F11CD1A9F600B171FE /* Alamofire.framework in Frameworks */,
 				A8EDD4F21CD1A9F600B171FE /* ChameleonFramework.framework in Frameworks */,
 				A8EDD4F31CD1A9F600B171FE /* Former.framework in Frameworks */,
-				A8EDD4F41CD1A9F600B171FE /* SwiftDateExtension.framework in Frameworks */,
-				A8EDD4F51CD1A9F600B171FE /* SwiftyJSON.framework in Frameworks */,
 				A8EDD4F61CD1A9F600B171FE /* CoreData.framework in Frameworks */,
 				A8EDD4F71CD1A9F600B171FE /* CoreLocation.framework in Frameworks */,
 				A8EDD4F81CD1A9F600B171FE /* MapKit.framework in Frameworks */,
@@ -226,6 +229,7 @@
 				A8EDD4FB1CD1AA4500B171FE /* AnimationsLibrary.swift */,
 				A8EDD5001CD1AA4500B171FE /* BetterAlert.swift */,
 				A8EDD4FA1CD1AA4500B171FE /* BetterViewController.swift */,
+				A8C1E4BB1CD4100600EFFE35 /* Constants_Colors.swift */,
 				A8EDD4C31CD1A8CA00B171FE /* Constants.swift */,
 				A8EDD5181CD2929800B171FE /* DataController.swift */,
 				A8EDD4FE1CD1AA4500B171FE /* Dispatch.swift */,
@@ -317,7 +321,7 @@
 		A8EDD5221CD2966100B171FE /* Shrine */ = {
 			isa = PBXGroup;
 			children = (
-				A8C8DC811CD2F24F002B1CDD /* Shrine+CoreDataProperties.swift */,
+				A8C1E4B31CD4006800EFFE35 /* Shrine+CoreDataProperties.swift */,
 				A8EDD5131CD2913B00B171FE /* Shrine.swift */,
 			);
 			name = Shrine;
@@ -326,7 +330,7 @@
 		A8EDD5231CD2966900B171FE /* Promise */ = {
 			isa = PBXGroup;
 			children = (
-				A8C8DC7F1CD2F23B002B1CDD /* Promise+CoreDataProperties.swift */,
+				A8C1E4B51CD400F700EFFE35 /* Promise+CoreDataProperties.swift */,
 				A8EDD4CE1CD1A8CA00B171FE /* Promise.swift */,
 			);
 			name = Promise;
@@ -335,7 +339,7 @@
 		A8EDD5241CD2967000B171FE /* Visit */ = {
 			isa = PBXGroup;
 			children = (
-				A8C8DC831CD2F259002B1CDD /* Visit+CoreDataProperties.swift */,
+				A8C1E4B71CD4015F00EFFE35 /* Visit+CoreDataProperties.swift */,
 				A8EDD51D1CD2962500B171FE /* Visit.swift */,
 			);
 			name = Visit;
@@ -344,6 +348,7 @@
 		E2A1D7AFA83B0EC19756F69A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8C1E4B91CD4071F00EFFE35 /* SwiftMoment.framework */,
 				A8C8DC851CD2FABC002B1CDD /* SwiftHEXColors.framework */,
 				A8EDD4E91CD1A9F600B171FE /* Alamofire.framework */,
 				A8EDD4EA1CD1A9F600B171FE /* ChameleonFramework.framework */,
@@ -545,8 +550,8 @@
 				A8EDD5111CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld in Sources */,
 				A8C8DC881CD2FE34002B1CDD /* PromiseTableViewCell.swift in Sources */,
 				A8EDD4E11CD1A8CA00B171FE /* Protocols.swift in Sources */,
+				A8C1E4BC1CD4100600EFFE35 /* Constants_Colors.swift in Sources */,
 				A8EDD4DC1CD1A8CA00B171FE /* Main_Model.swift in Sources */,
-				A8C8DC841CD2F259002B1CDD /* Visit+CoreDataProperties.swift in Sources */,
 				A8EDD4DD1CD1A8CA00B171FE /* MainViewController.swift in Sources */,
 				A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */,
 				A8EDD5021CD1AA4500B171FE /* BetterViewController.swift in Sources */,
@@ -555,6 +560,7 @@
 				A8EDD50E1CD1E61300B171FE /* CreateNew_Model.swift in Sources */,
 				A8EDD5081CD1AA4500B171FE /* BetterAlert.swift in Sources */,
 				A8EDD5061CD1AA4500B171FE /* Dispatch.swift in Sources */,
+				A8C1E4B81CD4015F00EFFE35 /* Visit+CoreDataProperties.swift in Sources */,
 				A8EDD4D41CD1A8CA00B171FE /* SegmentedButton.swift in Sources */,
 				A8EDD4E01CD1A8CA00B171FE /* PromiseDetailViewController.swift in Sources */,
 				A8EDD4DB1CD1A8CA00B171FE /* ListPromisesViewController.swift in Sources */,
@@ -564,16 +570,16 @@
 				A8EDD4D71CD1A8CA00B171FE /* Enums.swift in Sources */,
 				A8EDD5041CD1AA4500B171FE /* Safe.swift in Sources */,
 				A8EDD5211CD2962500B171FE /* Visit.swift in Sources */,
+				A8C1E4B41CD4006800EFFE35 /* Shrine+CoreDataProperties.swift in Sources */,
 				A8EDD5011CD1AA4500B171FE /* extensions.swift in Sources */,
 				A8EDD5071CD1AA4500B171FE /* Randomizer.swift in Sources */,
 				A8EDD5191CD2929800B171FE /* DataController.swift in Sources */,
 				A8EDD4D61CD1A8CA00B171FE /* CreateNewPromiseViewController.swift in Sources */,
 				A8EDD5031CD1AA4500B171FE /* AnimationsLibrary.swift in Sources */,
-				A8C8DC801CD2F23B002B1CDD /* Promise+CoreDataProperties.swift in Sources */,
+				A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */,
 				A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */,
 				A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */,
 				A8EDD5141CD2913B00B171FE /* Shrine.swift in Sources */,
-				A8C8DC821CD2F24F002B1CDD /* Shrine+CoreDataProperties.swift in Sources */,
 				A8EDD4DE1CD1A8CA00B171FE /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,10 +837,14 @@
 		A8EDD50F1CD28BB500B171FE /* ShrineDB_Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A88991431CD4443E007B5BB9 /* ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel */,
+				A89226351CD41BD5009B89C3 /* ShrineDB_Model_addedPromiseColors.xcdatamodel */,
+				A8C1E4B21CD4001400EFFE35 /* ShrineDB_Model_removedOptionals.xcdatamodel */,
+				A8C1E4B11CD3FBA600EFFE35 /* ShrineDB_Model_addedOriginCity.xcdatamodel */,
 				A8C8DC7E1CD2F208002B1CDD /* ShrineDB_Model 2.xcdatamodel */,
 				A8EDD5101CD28BB500B171FE /* ShrineDB_Model.xcdatamodel */,
 			);
-			currentVersion = A8C8DC7E1CD2F208002B1CDD /* ShrineDB_Model 2.xcdatamodel */;
+			currentVersion = A88991431CD4443E007B5BB9 /* ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel */;
 			path = ShrineDB_Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -84,7 +84,7 @@ class CoreDataBrain: NSObject {
       userInfo[NSLocalizedDescriptionKey] = "There was an error creating or loading the application's saved data."
       userInfo[NSLocalizedFailureReasonErrorKey] = "There was an error creating or loading the application's saved data."
       
-      userInfo[NSUnderlyingErrorKey] = error as NSError
+      userInfo[NSUnderlyingErrorKey] = error as! NSError
       let wrappedError = NSError(domain: "com.DesignerJeans.Shrine", code: 1001, userInfo: userInfo)
       
       NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")

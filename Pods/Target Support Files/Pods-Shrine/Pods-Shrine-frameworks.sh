@@ -84,18 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Shrine/Alamofire.framework"
   install_framework "Pods-Shrine/ChameleonFramework.framework"
   install_framework "Pods-Shrine/Former.framework"
-  install_framework "Pods-Shrine/SwiftDateExtension.framework"
   install_framework "Pods-Shrine/SwiftHEXColors.framework"
-  install_framework "Pods-Shrine/SwiftyJSON.framework"
+  install_framework "Pods-Shrine/SwiftMoment.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Shrine/Alamofire.framework"
   install_framework "Pods-Shrine/ChameleonFramework.framework"
   install_framework "Pods-Shrine/Former.framework"
-  install_framework "Pods-Shrine/SwiftDateExtension.framework"
   install_framework "Pods-Shrine/SwiftHEXColors.framework"
-  install_framework "Pods-Shrine/SwiftyJSON.framework"
+  install_framework "Pods-Shrine/SwiftMoment.framework"
 fi

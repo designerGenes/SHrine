@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Promise" representedClassName=".Promise" syncable="YES">
+        <attribute name="dateCreated" attributeType="Date" syncable="YES"/>
+        <attribute name="interval" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="punishment" attributeType="String" syncable="YES"/>
+        <attribute name="reward" attributeType="String" syncable="YES"/>
+        <relationship name="shrine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shrine" inverseName="promise" inverseEntity="Shrine" syncable="YES"/>
+    </entity>
+    <entity name="Shrine" representedClassName=".Shrine" syncable="YES">
+        <attribute name="latitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nickname" attributeType="String" syncable="YES"/>
+        <attribute name="originCity" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="promise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promise" inverseName="shrine" inverseEntity="Promise" syncable="YES"/>
+        <relationship name="visits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Visit" inverseName="shrine" inverseEntity="Visit" syncable="YES"/>
+    </entity>
+    <entity name="Visit" representedClassName=".Visit" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <relationship name="shrine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shrine" inverseName="visits" inverseEntity="Shrine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Promise" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Shrine" positionX="-288" positionY="-162" width="128" height="135"/>
+        <element name="Visit" positionX="403" positionY="267" width="128" height="75"/>
+    </elements>
+</model>

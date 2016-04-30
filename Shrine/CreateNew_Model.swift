@@ -32,7 +32,8 @@ class CreateNew_Model: ViewModel, CLLocationManagerDelegate {
         
         // step 1: create Promise object in saveable form
         self.promise = Promise(entity: getAppDelegate().CoreData_Brain.promiseDescription, insertIntoManagedObjectContext: getAppDelegate().CoreData_Brain.managedObjectContext)
-        SAFE(self.promise) { promise in
+        SAFE(self.promise) { promise in  // set Promise properties
+          promise.colorShorthand = master.shrineColor
           promise.dateCreated = NSDate(timeIntervalSinceNow: 0)
           promise.setValues(interval, reward.rawValue, punishment.rawValue)
         }
@@ -86,30 +87,38 @@ class CreateNew_Model: ViewModel, CLLocationManagerDelegate {
         // step 1.1: create Shrine object in saveable form
         self.shrine = Shrine(entity: getAppDelegate().CoreData_Brain.shrineDescription, insertIntoManagedObjectContext: getAppDelegate().CoreData_Brain.managedObjectContext)
         SAFE(self.shrine) { shrine in
+          let geoCoder = CLGeocoder()
           shrine.latitude = location.coordinate.latitude
           shrine.longitude = location.coordinate.longitude
           shrine.nickname = master.shrineTitle!
-          
-        // step 1.2: create initial Visit object and attach to shrine
-          let visit = Visit(entity: getAppDelegate().CoreData_Brain.visitDescription, insertIntoManagedObjectContext: getAppDelegate().CoreData_Brain.managedObjectContext)
-          self.visit = visit
-          visit.date = NSDate(timeIntervalSinceNow: 0)
-          
-        // step 1.3: tie them all together
-//          promise.setValue(shrine, forKey: "shrine")
-//          shrine.setValue(promise, forKey: "promise")
-          visit.setValue(shrine, forKey: "shrine")
-          shrine.promise = promise
-          promise.shrine = shrine
-//          visit.shrine = shrine
-          
-        // step 1.4: move onwards and upwards
-          self.doSaveDataObjects()
+          geoCoder.reverseGeocodeLocation(location) { (placemarks, error) -> Void  in
+            SAFE(placemarks?.first)  { place in
+              if let city = place.addressDictionary!["City"] as? String {
+                if let country = place.addressDictionary!["Country"] as? String {
+                  shrine.originCity = "\(city), \(country)"
+                }
+              }
+            }
+            
+            // step 1.2: create initial Visit object and attach to shrine
+              let visit = Visit(entity: getAppDelegate().CoreData_Brain.visitDescription, insertIntoManagedObjectContext: getAppDelegate().CoreData_Brain.managedObjectContext)
+              self.visit = visit
+              visit.date = NSDate(timeIntervalSinceNow: 0)
+              
+            // step 1.3: tie them all together
+              visit.setValue(shrine, forKey: "shrine")
+              shrine.promise = promise
+              promise.shrine = shrine
+    //          visit.shrine = shrine
+              
+            // step 1.4: move onwards and upwards
+              self.doSaveDataObjects()
+            }
+          }
         }
-      }
+        }
+        manager.stopUpdatingLocation()
     }
-    }
-    manager.stopUpdatingLocation()
   }
   
 
