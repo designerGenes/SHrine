@@ -139,7 +139,7 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
     PF("doAskToFinalize")
     
     let questionAlert = BetterAlert(title: "Finalize?", message: STR_QuestionFinalizePromise, hasCancel: true, vc: self, cancelAction:  {
-      self.performSegueWithIdentifier(Segue.fromCreateToMain.rawValue, sender: nil)
+      self.performSegueWithIdentifier(Segue.unwind_CreateToMain.rawValue, sender: nil)
     }, okAction: {
       SAFECAST(self.model, type: CreateNew_Model.self) { model in
         model.doCreateNewDataObjects()
@@ -150,17 +150,28 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
   
   
   func willAskForConsequences(type: MoralCondition) {
+    PF("willAskForConsequences")
     txtNickname.resignFirstResponder()  // hacky
     SAFE(txtNickname.text) { self.shrineTitle = $0 }
-    self.view.blur(1, style: .Dark)
+    self.view.blur(1.0, style: .Dark)
     doAskForConsequences(type)
   }
   
   func doAskForConsequences(type: MoralCondition) {
+    PF("doAskForConsequences")
     if let set = getAppDelegate().consequences[type] {
       
-      // step 1: create label
+      if let myWindow = UIApplication.sharedApplication().keyWindow {
       
+      
+        
+      print("Windows center \(myWindow.center)")
+      print("View center \(view.center)")
+//      view.frame = myWindow.frame
+//      view.center = myWindow.center
+      }
+      
+      // step 1: create label
       let lblConsequence = UILabel()
       lblConsequence.textAlignment = .Center; lblConsequence.frame.size = CGSize(width: view.widthWithMargins(), height: view.frame.height * 0.3)
       lblConsequence.numberOfLines = 0
@@ -168,13 +179,17 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
       lblConsequence.text = "Choose \({type == .good ? STR_ChooseReward : STR_ChoosePunishment }())"
       lblConsequence.textColor = UIColor.flatWhiteColor()
       lblConsequence.alpha = 0
+      lblConsequence.center.x = view.center.x
+//      print(lblConsequence.center)
+//      print(view.frame)
     
     
       // step 2: display consequence buttons
       self.consequenceButtons.removeAll()
+      let window = UIApplication.sharedApplication().keyWindow!
+      let safeWidth = view.frame.width / CGFloat(set.count); let safeHeight = safeWidth // duh
+      let frame = CGRectMake(0, 0, safeWidth, safeWidth)
       (0..<set.count).map { count in
-        let safeWidth = self.view.frame.width / CGFloat(set.count); let safeHeight = safeWidth // duh
-        let frame = CGRectMake(0, 0, safeWidth, safeWidth)
         let btnConsequence = UIButton(frame: frame)
         btnConsequence.setImage(UIImage(named: set[count].rawValue), forState: .Normal)
         btnConsequence.userInteractionEnabled = true
@@ -195,12 +210,22 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
         self.consequenceButtons.append(btnConsequence)
         btnConsequence.fadeIn()
       
+        
+//        let squareView = UIView()
+//        squareView.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
+//        squareView.alpha = 1
+////        squareView.center = self.view.center
+//        squareView.backgroundColor = UIColor.flatBlueColor()
+//        self.view.addSubview(squareView)
+        
+        
+        
       }
       
       // step 3: fade in label and position above buttons
       SAFE(self.consequenceButtons.first) { firstBtn in
         self.view.addSubview(lblConsequence)
-        lblConsequence.center = CGPointMake(self.view.center.x, (firstBtn[0].y-lblConsequence.frame.height/3))
+//        lblConsequence.center = CGPointMake(self.view.center.x, (firstBtn[0].y-lblConsequence.frame.height/3))
         lblConsequence.fadeIn()
         self.consequenceButtons.append(lblConsequence)
         
@@ -264,10 +289,10 @@ class CreateNewPromiseViewController: BetterViewController, UITextFieldDelegate 
    
     
     
-    let uniqueColor = self.generateRandomColor()
-    CreateNewPromiseViewController.previousColor = uniqueColor
-    view.backgroundColor = uniqueColor
-    shrineColor = uniqueColor.hexValue()
+    if let bgColor = view.backgroundColor {
+      CreateNewPromiseViewController.previousColor = bgColor
+      self.shrineColor = bgColor.hexValue()
+    }
     
     
   }

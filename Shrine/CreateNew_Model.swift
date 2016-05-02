@@ -58,7 +58,7 @@ class CreateNew_Model: ViewModel, CLLocationManagerDelegate {
         try shrine.managedObjectContext?.save()
         try visit.managedObjectContext?.save()
         print("Successfully saved objects!")
-        master.performSegueWithIdentifier(.fromCreateToMain, sender: nil)
+        master.performSegueWithIdentifier(.unwind_CreateToMain, sender: self)
       } catch {
         print("Unable to save these objects")
       }
@@ -117,7 +117,7 @@ class CreateNew_Model: ViewModel, CLLocationManagerDelegate {
           }
         }
         }
-        manager.stopUpdatingLocation()
+//        manager.stopUpdatingLocation()
     }
   }
   

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7AC0EB638BD928D8DDC47EF8 /* Pods_Shrine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */; };
+		A88991891CD6F0F7007B5BB9 /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88991881CD6F0F7007B5BB9 /* SegueHandler.swift */; };
 		A8C1E4B41CD4006800EFFE35 /* Shrine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B31CD4006800EFFE35 /* Shrine+CoreDataProperties.swift */; };
 		A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B51CD400F700EFFE35 /* Promise+CoreDataProperties.swift */; };
 		A8C1E4B81CD4015F00EFFE35 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B71CD4015F00EFFE35 /* Visit+CoreDataProperties.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		A4531958F492130671B663BD /* Pods-Shrine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.release.xcconfig"; sourceTree = "<group>"; };
 		A88991431CD4443E007B5BB9 /* ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel; sourceTree = "<group>"; };
+		A88991881CD6F0F7007B5BB9 /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		A89226351CD41BD5009B89C3 /* ShrineDB_Model_addedPromiseColors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedPromiseColors.xcdatamodel; sourceTree = "<group>"; };
 		A8C1E4B11CD3FBA600EFFE35 /* ShrineDB_Model_addedOriginCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedOriginCity.xcdatamodel; sourceTree = "<group>"; };
 		A8C1E4B21CD4001400EFFE35 /* ShrineDB_Model_removedOptionals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_removedOptionals.xcdatamodel; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				A8EDD4991CD1A83E00B171FE /* Main.storyboard */,
+				A88991881CD6F0F7007B5BB9 /* SegueHandler.swift */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				A8EDD5031CD1AA4500B171FE /* AnimationsLibrary.swift in Sources */,
 				A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */,
 				A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */,
+				A88991891CD6F0F7007B5BB9 /* SegueHandler.swift in Sources */,
 				A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */,
 				A8EDD5141CD2913B00B171FE /* Shrine.swift in Sources */,
 				A8EDD4DE1CD1A8CA00B171FE /* Promise.swift in Sources */,

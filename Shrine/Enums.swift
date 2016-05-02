@@ -78,6 +78,6 @@ enum Segue: String {
   case fromMainToList = "fromMainToList"
   case fromListToDetail = "fromListToDetail"
   case fromMainToCreate = "fromMainToCreate"
-  case fromCreateToMain = "fromCreateToMain"  // this cannot be good code
-  case unwindDetailToList = "unwindDetailToList"
+  case unwind_CreateToMain = "unwind_CreateToMain"  // this cannot be good code
+  case unwind_DetailToList = "unwind_DetailToList"
 }

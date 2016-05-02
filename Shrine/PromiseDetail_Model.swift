@@ -31,7 +31,7 @@ class PromiseDetail_Model: ViewModel {
         let context = getAppDelegate().CoreData_Brain.managedObjectContext
         SAFE(self.focus) { context.deleteObject($0) }
         SAFECAST(self.master, type: PromiseDetailViewController.self) { master in
-          master.performSegueWithIdentifier(Segue.unwindDetailToList.rawValue, sender: nil)
+          master.performSegueWithIdentifier(Segue.unwind_DetailToList.rawValue, sender: self)
         }
         
     }

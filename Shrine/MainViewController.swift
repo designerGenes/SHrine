@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CountArrivals
 //
 //  Created by Jaden Nation on 4/24/16.
@@ -12,13 +12,15 @@ import ChameleonFramework
 
 class MainViewController: BetterViewController {
   
-  
   // MARK: -- outlets
   @IBOutlet weak var btnGoToList: UIButton!
   @IBOutlet weak var btnNew: UIButton!
   @IBOutlet weak var viewContainsMap: UIView!
   @IBAction func clickedMenuButton(sender: UIButton) { handleButtonStrip(sender.tag) }
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
+
+  @IBOutlet weak var btnHelp: UIButton!
+  
 
   // MARK: -- variables
   var createNewPromiseView: CreateNewPromiseViewController?
@@ -27,6 +29,19 @@ class MainViewController: BetterViewController {
   var mapObject: MKMapView? { didSet { loadMapViewIntoContainer()} }  // need this?
 
   // MARK: -- custom functions
+  override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+    if let id = identifier{
+      if id == "unwind_CreateToMain" {
+        print("Found the segue")
+        let unwindSegue = lateralSegue_Back(identifier: id, source: fromViewController, destination: toViewController, performHandler: { () -> Void in
+          
+        })
+        return unwindSegue
+      }
+    }
+    
+    return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)!
+  }
   
   
   func handleButtonStrip(id: Int) {
@@ -35,9 +50,12 @@ class MainViewController: BetterViewController {
       case 0:  // list
         print("Clicked 0")
         self.performSegueWithIdentifier(Segue.fromMainToList.rawValue, sender: nil)
-      case 1:  // new
+      case 1:   // help
+      
+        break
+      case 2:  // new
         model.doCreateNewPromise()
-      case 2:  // help
+      case 3:  // help
         model.doShowHelpPages()
       default:
         print("Oh lawd something went wrong")
@@ -71,6 +89,7 @@ class MainViewController: BetterViewController {
     model.doWasCreated()
     self.viewContainsMap.clipsToBounds = true
     }
+    
   }
   
   // MARK: -- segue functions

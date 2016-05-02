@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 let GLOBAL_FADE_TIME: NSTimeInterval = 0.75
+let GLOBAL_TRANSITION_TIME: NSTimeInterval = 0.75
 let GLOBAL_MARGIN: CGFloat = 20.0
 let MAX_CONSEQUENCES = 3
 

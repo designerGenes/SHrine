@@ -29,7 +29,7 @@ class GPSBrain: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
   
   // MARK: -- CLLocationManagerDelegate Functions
   func initLocationManager() -> CLLocationManager {
-    var LM = CLLocationManager()
+    let LM = CLLocationManager()
     return LM
   }
   
@@ -57,7 +57,7 @@ class GPSBrain: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
       if let focus = self.focus {
         print("We have a focus!")
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008))
         focus.setRegion(region, animated: true)
         focus.fadeIn()
       }
