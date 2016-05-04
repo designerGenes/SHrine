@@ -15,7 +15,7 @@ class PromiseDetailViewController: BetterViewController {
   
   @IBOutlet weak var viewTopZone: UIView!
   @IBOutlet weak var tblPromiseDetails: UITableView!
-  @IBOutlet weak var viewContainsChain: UIView!
+  @IBOutlet weak var viewContainsChain: UIScrollView!
   @IBOutlet weak var viewContainsTableAndChain: UIView!
   @IBOutlet weak var viewBottomZone: UIView!
   @IBOutlet weak var lblShrineNickname: UILabel!

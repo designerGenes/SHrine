@@ -15,7 +15,8 @@ class MainViewController: BetterViewController {
   // MARK: -- outlets
   @IBOutlet weak var btnGoToList: UIButton!
   @IBOutlet weak var btnNew: UIButton!
-  @IBOutlet weak var viewContainsMap: UIView!
+  @IBOutlet weak var mapView: MKMapView!
+  
   @IBAction func clickedMenuButton(sender: UIButton) { handleButtonStrip(sender.tag) }
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
 
@@ -24,18 +25,17 @@ class MainViewController: BetterViewController {
 
   // MARK: -- variables
   var createNewPromiseView: CreateNewPromiseViewController?
-  var  mapView: MKMapView?
   
-  var mapObject: MKMapView? { didSet { loadMapViewIntoContainer()} }  // need this?
+//  var mapObject: MKMapView? // { didSet { loadMapViewIntoContainer()} }  // need this?  GUESS NOT! 
 
   // MARK: -- custom functions
   override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-    if let id = identifier{
-      if id == "unwind_CreateToMain" {
-        print("Found the segue")
+    if let id = identifier {
+      if id != "unwind_ListToMain" {  // because for now this is a Modal segue
         let unwindSegue = lateralSegue_Back(identifier: id, source: fromViewController, destination: toViewController, performHandler: { () -> Void in
           
         })
+      
         return unwindSegue
       }
     }
@@ -49,35 +49,25 @@ class MainViewController: BetterViewController {
       switch id {
       case 0:  // list
         print("Clicked 0")
-        self.performSegueWithIdentifier(Segue.fromMainToList.rawValue, sender: nil)
-      case 1:   // help
-      
+        self.performSegueWithIdentifier(Segue.fromMainToList.rawValue, sender: self)
+      case 1:   // settings
+        self.performSegueWithIdentifier(Segue.fromMainToSettings.rawValue, sender: self)
         break
       case 2:  // new
         model.doCreateNewPromise()
       case 3:  // help
-        model.doShowHelpPages()
+        self.performSegueWithIdentifier(Segue.fromMainToHelp.rawValue, sender: self)
       default:
         print("Oh lawd something went wrong")
       }
     }
   }
-  
-  func loadMapViewIntoContainer() {
-    print("Got object, trying to load")
-    SAFE(self.mapObject) { MO in
-      
-      MO.frame = self.view.frame
-      MO.clipsToBounds = true
-      self.viewContainsMap.addSubview(MO)
-      MO.center = self.viewContainsMap.center
-    }
-  }
+
 
   
   func didLoadStuff() {
     model = Main_Model(master: self)
-    
+    SAFECAST(model, type: Main_Model.self) { $0.doViewAppeared() }
   }
 
   func willAppearStuff() {
@@ -85,22 +75,19 @@ class MainViewController: BetterViewController {
   }
 
   func didAppearStuff() {
+    mapView.delegate = getAppDelegate().GPS_Brain
     SAFECAST(model, type: Main_Model.self) { model in
-    model.doWasCreated()
-    self.viewContainsMap.clipsToBounds = true
+//      model.doViewAppeared()
     }
-    
   }
   
   // MARK: -- segue functions
   
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    SAFE(sender) { sender in
-      
-    }
-    super.prepareForSegue(segue, sender: sender)
-  }
+//  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    
+//    super.prepareForSegue(segue, sender: sender)
+//  }
 
   // MARK: -- required functions
   override func viewDidLoad() {
@@ -118,7 +105,7 @@ class MainViewController: BetterViewController {
     SAFE(mapView) { mapView in
       SAFE(getAppDelegate().GPS_Brain.focus) { focus in
         if mapView == focus {
-          getAppDelegate().GPS_Brain.focus = nil  // cleanup code just for kicks
+//          getAppDelegate().GPS_Brain.focus = nil  // cleanup code just for kicks
         }
       }
     }

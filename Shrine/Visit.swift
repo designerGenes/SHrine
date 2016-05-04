@@ -11,7 +11,18 @@ import CoreData
 
 
 class Visit: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
-}
+  // MARK: -- variables
+  
+  
+  
+  // MARK: -- custom functions
+  func loadProperties(shrine: Shrine, date: NSDate) {
+//    self.shrine = shrine
+    self.date = date
+  }
+  
+  
+  // MARK: -- required functions
+  
+  
+} // end of custom class

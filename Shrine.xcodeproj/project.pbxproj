@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7AC0EB638BD928D8DDC47EF8 /* Pods_Shrine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE84B3DC10360C3898E89ACB /* Pods_Shrine.framework */; };
+		A82FD4A11CD9785A00EE92F3 /* DebugVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FD4A01CD9785A00EE92F3 /* DebugVariables.swift */; };
 		A88991891CD6F0F7007B5BB9 /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88991881CD6F0F7007B5BB9 /* SegueHandler.swift */; };
+		A889918B1CD81EB9007B5BB9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889918A1CD81EB9007B5BB9 /* HelpViewController.swift */; };
+		A889918E1CD81ECE007B5BB9 /* Help_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889918D1CD81ECE007B5BB9 /* Help_Model.swift */; };
+		A88991901CD81F24007B5BB9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A889918F1CD81F24007B5BB9 /* SettingsViewController.swift */; };
+		A88991931CD81F30007B5BB9 /* Settings_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88991921CD81F30007B5BB9 /* Settings_Model.swift */; };
 		A8C1E4B41CD4006800EFFE35 /* Shrine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B31CD4006800EFFE35 /* Shrine+CoreDataProperties.swift */; };
 		A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B51CD400F700EFFE35 /* Promise+CoreDataProperties.swift */; };
 		A8C1E4B81CD4015F00EFFE35 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1E4B71CD4015F00EFFE35 /* Visit+CoreDataProperties.swift */; };
@@ -75,8 +80,13 @@
 
 /* Begin PBXFileReference section */
 		A4531958F492130671B663BD /* Pods-Shrine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shrine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shrine/Pods-Shrine.release.xcconfig"; sourceTree = "<group>"; };
+		A82FD4A01CD9785A00EE92F3 /* DebugVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugVariables.swift; sourceTree = "<group>"; };
 		A88991431CD4443E007B5BB9 /* ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedIntervalsBeforeReward.xcdatamodel; sourceTree = "<group>"; };
 		A88991881CD6F0F7007B5BB9 /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		A889918A1CD81EB9007B5BB9 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		A889918D1CD81ECE007B5BB9 /* Help_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help_Model.swift; sourceTree = "<group>"; };
+		A889918F1CD81F24007B5BB9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A88991921CD81F30007B5BB9 /* Settings_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_Model.swift; sourceTree = "<group>"; };
 		A89226351CD41BD5009B89C3 /* ShrineDB_Model_addedPromiseColors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedPromiseColors.xcdatamodel; sourceTree = "<group>"; };
 		A8C1E4B11CD3FBA600EFFE35 /* ShrineDB_Model_addedOriginCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_addedOriginCity.xcdatamodel; sourceTree = "<group>"; };
 		A8C1E4B21CD4001400EFFE35 /* ShrineDB_Model_removedOptionals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShrineDB_Model_removedOptionals.xcdatamodel; sourceTree = "<group>"; };
@@ -178,6 +188,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A889918C1CD81EBD007B5BB9 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				A889918A1CD81EB9007B5BB9 /* HelpViewController.swift */,
+				A889918D1CD81ECE007B5BB9 /* Help_Model.swift */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		A88991911CD81F27007B5BB9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A889918F1CD81F24007B5BB9 /* SettingsViewController.swift */,
+				A88991921CD81F30007B5BB9 /* Settings_Model.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		A8EDD4891CD1A83E00B171FE = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +249,8 @@
 				A8EDD5091CD1BE1600B171FE /* ListPromises */,
 				A8EDD50A1CD1BE1F00B171FE /* Main */,
 				A8EDD50B1CD1BE2400B171FE /* PromiseDetail */,
+				A889918C1CD81EBD007B5BB9 /* Help */,
+				A88991911CD81F27007B5BB9 /* Settings */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -241,6 +271,7 @@
 				A8EDD4FF1CD1AA4500B171FE /* Randomizer.swift */,
 				A8EDD4FC1CD1AA4500B171FE /* Safe.swift */,
 				A8EDD4FD1CD1AA4500B171FE /* ViewModel.swift */,
+				A82FD4A01CD9785A00EE92F3 /* DebugVariables.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -555,6 +586,7 @@
 				A8EDD4E11CD1A8CA00B171FE /* Protocols.swift in Sources */,
 				A8C1E4BC1CD4100600EFFE35 /* Constants_Colors.swift in Sources */,
 				A8EDD4DC1CD1A8CA00B171FE /* Main_Model.swift in Sources */,
+				A88991901CD81F24007B5BB9 /* SettingsViewController.swift in Sources */,
 				A8EDD4DD1CD1A8CA00B171FE /* MainViewController.swift in Sources */,
 				A8EDD4D81CD1A8CA00B171FE /* GPSBrain.swift in Sources */,
 				A8EDD5021CD1AA4500B171FE /* BetterViewController.swift in Sources */,
@@ -581,10 +613,14 @@
 				A8EDD5031CD1AA4500B171FE /* AnimationsLibrary.swift in Sources */,
 				A8C1E4B61CD400F700EFFE35 /* Promise+CoreDataProperties.swift in Sources */,
 				A8C8DC6A1CD2B990002B1CDD /* CoreDataBrain.swift in Sources */,
+				A889918B1CD81EB9007B5BB9 /* HelpViewController.swift in Sources */,
 				A88991891CD6F0F7007B5BB9 /* SegueHandler.swift in Sources */,
 				A8EDD4DF1CD1A8CA00B171FE /* PromiseDetail_Model.swift in Sources */,
+				A88991931CD81F30007B5BB9 /* Settings_Model.swift in Sources */,
 				A8EDD5141CD2913B00B171FE /* Shrine.swift in Sources */,
+				A889918E1CD81ECE007B5BB9 /* Help_Model.swift in Sources */,
 				A8EDD4DE1CD1A8CA00B171FE /* Promise.swift in Sources */,
+				A82FD4A11CD9785A00EE92F3 /* DebugVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

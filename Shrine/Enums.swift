@@ -77,6 +77,9 @@ enum VC: String {
 enum Segue: String {
   case fromMainToList = "fromMainToList"
   case fromListToDetail = "fromListToDetail"
+  case fromMainToSettings = "fromMainToSettings"
+  case fromMainToHelp = "fromMainToHelp"
+  case fromCreateToHelp = "fromCreateToHelp"
   case fromMainToCreate = "fromMainToCreate"
   case unwind_CreateToMain = "unwind_CreateToMain"  // this cannot be good code
   case unwind_DetailToList = "unwind_DetailToList"

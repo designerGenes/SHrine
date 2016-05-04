@@ -160,15 +160,37 @@ class PromiseDetail_Model: ViewModel {
     }
   }
   
-  func computeStreak(focus: Promise) -> String {
+  func generateStreak() {
+    SAFECAST(master, type: PromiseDetailViewController.self) { master in
+    SAFE(self.focus) { promise in
+    SAFE(promise.shrine) { shrine in
+      var streaks = []
+      
+      
+      if let visits = shrine.visits as? [Visit] {
+        visits.map { visit in
+        
+        }
+        
+      }
+      
+    } } }
+  }
+  
+  func computeStreak() -> String {
+    
+    
+    
     return " (streak) "
   }
   
-  func retrieveFocus(id: NSManagedObjectID, after: ()->()) {
+  func retrieveFocus(id: NSManagedObjectID, after: (()->())...) {
     let CD = getAppDelegate().CoreData_Brain
     if let focusPromise = CD.managedObjectContext.objectWithID(id) as? Promise {
      self.focus = focusPromise
-      after()
+      for closure in after {
+        closure()
+      }
     }
   }
   
@@ -176,7 +198,7 @@ class PromiseDetail_Model: ViewModel {
   // MARK: -- required functions
   init(master: PromiseDetailViewController, id: NSManagedObjectID) {
     super.init(_master: master) ; doWasCreated()
-    retrieveFocus(id, after: generateFormerCells)
+    retrieveFocus(id, after: generateFormerCells, generateStreak)
   }
   
 } // end of model class

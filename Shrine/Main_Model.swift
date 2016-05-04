@@ -11,70 +11,54 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class Main_Model: ViewModel, CLLocationManagerDelegate {
+class Main_Model: ViewModel {
   // MARK: -- variables
     
 
   // MARK: -- createNPView functions
   func doCreateNewPromise() {
-//    SAFECAST(master, type: MainViewController.self) { master in 
     if let master = master as? MainViewController {
       master.performSegueWithIdentifier(Segue.fromMainToCreate.rawValue, sender: nil)
-      
-//      view.slide(.down, distance: nil)
-      
-//      if let createNPView = master.loadViewFromNib("CreateNewPromise") as? CreateNewPromiseView {
-//        master.createNewPromiseView = createNPView
-//        master.view.blur(.Dark)
-//        createNPView.alpha = 0
-//        createNPView.frame = master.view.frame
-////        createNPView.bounds = CGRectMake(0, 0, self.master.view.frame.width, self.master.view.frame.height * 0.7)
-//        master.view.addSubview(createNPView)
-//        createNPView.center.x = master.view.center.x
-//        createNPView.fadeIn()
-//        createNPView.kickstartCycle()
-////        createNPView.displayChoices()
-////        createNPView.slide(.right)
-//        
-//        
-//      }
-//     
     }
-  
   }
   
   
   // MARK: -- custom functions
-  
-  
-  
-  func doShowHelpPages() {
-    
+  func doViewAppeared() {  // hacky
+    print("Appeared")
+    SAFE(getAppDelegate().GPS_Brain) { brain in
+      brain.pinColor = UIColor.flatRedColor()
+      
+//      brain.getCurrentLocation()
+      if let master = self.master as? MainViewController { brain.focus = master.mapView }
+    }
   }
-  
   
   
   func doWasCreated() {
     if let master = self.master as? MainViewController {
       let brain = getAppDelegate().GPS_Brain
-      master.mapView = MKMapView()
-      SAFE (master.mapView) { mapView in
-        mapView.alpha = 0
-        brain.focus = mapView
-        brain.getCurrentLocation()
-        master.viewContainsMap.addSubview(mapView)
-        mapView.frame = master.view.frame
-        mapView.center = master.view.center
-        mapView.userInteractionEnabled = false
-  //      mapView.setRegion(region, animated: true)      
-      }
+      let mapView = master.mapView
+      mapView.userTrackingMode = .Follow
+      mapView.alpha = 0
+      mapView.clipsToBounds = true
+      mapView.delegate = brain
+      brain.focus = mapView
+      brain.pinColor = UIColor.flatRedColor()
+      brain.getCurrentLocation()
+      brain.dropPin()
+      
+      
+//        mapView.frame = master.view.frame
+//        mapView.center = master.view.center
+//        mapView.userInteractionEnabled = false
     }
   }
   
 
 
 
-// MARK: -- required functions
-init(master: MainViewController) { super.init(_master: master) ; doWasCreated() }
+  // MARK: -- required functions
+  init(master: MainViewController) { super.init(_master: master) ; doWasCreated() }
   
 } // end of model class
